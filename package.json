@@ -6,12 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^5.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-session": "^1.17.1",
     "helmet": "^4.1.0",
     "http-errors": "~1.6.3",
+    "mongoose": "^5.10.0",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "passport": "^0.4.1",
+    "passport-salesforce": "0.0.2",
+    "pug": "2.0.0-beta11",
+    "redis": "^3.0.2"
   }
 }
