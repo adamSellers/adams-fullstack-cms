@@ -40,27 +40,30 @@ passport.use(
         profileURL: process.env.SFCOMMUNITYURL + '/services/oauth2/userinfo'
     }, async (accessToken, refreshToken, profile, done) => {
         // test if user exists
-        try {
-            let userId = profile.user_id;
-            const existingUser = await User.findOne({ userId: profile.id });
-        } catch (e) {
-            console.error('catching the error: ' + e);
-            existingUser = false;
-        }
+        console.log(`the accessToken is ${accessToken}`);
+        console.log(`the refreshtoken is ${refreshToken}`);
+        console.log(`the profile is ${profile}`);
+        // try {
+        //     let userId = profile.user_id;
+        //     const existingUser = await User.findOne({ userId: profile.id });
+        // } catch (e) {
+        //     console.error('catching the error: ' + e);
+        //     existingUser = false;
+        // }
 
-        if (existingUser) {
-            // user exists, return the existing user
-            console.log('existing user exists: ' + JSON.stringify(existingUser));
-            done(null, existingUser);
-        } else {
-            // user doesn't exist so we create a new one.
-            const user = await new User({
-              userId: profile.id,
-              firstName: profile.firstName,
-              lastName: profile.lastName
-            }).save();
+        // if (existingUser) {
+        //     // user exists, return the existing user
+        //     console.log('existing user exists: ' + JSON.stringify(existingUser));
+        //     done(null, existingUser);
+        // } else {
+        //     // user doesn't exist so we create a new one.
+        //     const user = await new User({
+        //       userId: profile.id,
+        //       firstName: profile.firstName,
+        //       lastName: profile.lastName
+        //     }).save();
             
-            done(null, user);
-        }
+        //     done(null, user);
+        // }
     })
 );
