@@ -40,7 +40,6 @@ passport.use(
         // test if user exists
         
         let userId = profile.user_id;
-        console.log(`in the try catch, userId is: ${userId}`);
         const existingUser = await User.findOne({ userId: userId });
 
         if (existingUser) {
