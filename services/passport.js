@@ -61,7 +61,7 @@ passport.use(
                 sfAccessToken: accessToken,
                 sfUserString: profile.profile,
                 sfProfilePic: profile.picture,
-                sfInstanceUrl: profile.custom_domain
+                sfInstanceUrl: profile.urls.custom_domain
             }).save();
             
             done(null, user);
