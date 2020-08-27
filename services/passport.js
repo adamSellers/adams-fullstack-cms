@@ -15,13 +15,11 @@ const User = mongoose.model('users');
 // serialise and deserialise user functions go here, Passport calls these
 // on every request to identify the user in he session cookie
 passport.serializeUser(function (user, done) {
-    console.log('user details in the serialise user function: ' + JSON.stringify(user));
     done(null, user.id);
 });
 
 passport.deserializeUser(function (id, done) {
     // query the db to find an existing user, id comes in from the user session cookie
-    console.log('user id in the deserialze is: ' + id);
     User.findById(id)
         .then(user => {
         done(null, user);
@@ -40,9 +38,6 @@ passport.use(
         profileURL: process.env.SFCOMMUNITYURL + '/services/oauth2/userinfo'
     }, async (accessToken, refreshToken, profile, done) => {
         // test if user exists
-        console.log(`the accessToken is ${accessToken}`);
-        console.log(`the refreshtoken is ${refreshToken}`);
-        console.log(`the profile is ${JSON.stringify(profile)}`);
         
         let userId = profile.user_id;
         console.log(`in the try catch, userId is: ${userId}`);
@@ -50,10 +45,8 @@ passport.use(
 
         if (existingUser) {
             // user exists, return the existing user
-            console.log('existing user exists: ' + JSON.stringify(existingUser));
             done(null, existingUser);
         } else {
-            console.log(`looking for the instance url var: ${profile.urls.custom_domain}`);
             // user doesn't exist so we create a new one.
             const user = await new User({
                 userId: profile.user_id,
