@@ -23,9 +23,9 @@ passport.deserializeUser(function (id, done) {
     // query the db to find an existing user, id comes in from the user session cookie
     console.log('user id in the deserialze is: ' + id);
     User.findById(id)
-      .then(user => {
+        .then(user => {
         done(null, user);
-      });
+    });
 });
 
 // setup the Salesforce Strategy
