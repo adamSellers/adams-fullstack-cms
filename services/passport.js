@@ -42,7 +42,7 @@ passport.use(
         // test if user exists
         console.log(`the accessToken is ${accessToken}`);
         console.log(`the refreshtoken is ${refreshToken}`);
-        console.log(`the profile is ${profile}`);
+        console.log(`the profile is ${JSON.stringify(profile)}`);
         // try {
         //     let userId = profile.user_id;
         //     const existingUser = await User.findOne({ userId: profile.id });
