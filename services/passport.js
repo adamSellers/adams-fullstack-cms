@@ -56,8 +56,8 @@ passport.use(
             // user doesn't exist so we create a new one.
             const user = await new User({
                 userId: profile.user_id,
-                firstName: profile.firstName,
-                lastName: profile.lastName
+                firstName: profile.given_name,
+                lastName: profile.family_name
             }).save();
             
             done(null, user);
