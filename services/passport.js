@@ -44,10 +44,13 @@ passport.use(
         console.log(`the refreshtoken is ${refreshToken}`);
         console.log(`the profile is ${JSON.stringify(profile)}`);
         
+        try {
         let userId = profile.user_id;
         console.log(`in the try catch, userId is: ${userId}`);
         const existingUser = await User.findOne({ userId: userId });
-
+        } catch(e) {
+            console.log(e); //superb error handling here
+        }
         if (existingUser) {
             // user exists, return the existing user
             console.log('existing user exists: ' + JSON.stringify(existingUser));
