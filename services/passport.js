@@ -57,11 +57,11 @@ passport.use(
             const user = await new User({
                 userId: profile.user_id,
                 firstName: profile.given_name,
-                lastName: profile.family_name
-                // sfAccessToken: accessToken,
-                // sfUserString: profile.profile,
-                // sfProfilePic: profile.picture,
-                // sfInstanceUrl: profile.custom_domain
+                lastName: profile.family_name,
+                sfAccessToken: accessToken,
+                sfUserString: profile.profile,
+                sfProfilePic: profile.picture,
+                sfInstanceUrl: profile.custom_domain
             }).save();
             
             done(null, user);
