@@ -53,6 +53,7 @@ passport.use(
             console.log('existing user exists: ' + JSON.stringify(existingUser));
             done(null, existingUser);
         } else {
+            console.log(`looking for the instance url var: ${profile.urls.custom_domain}`);
             // user doesn't exist so we create a new one.
             const user = await new User({
                 userId: profile.user_id,
