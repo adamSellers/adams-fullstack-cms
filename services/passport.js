@@ -45,7 +45,8 @@ passport.use(
         console.log(`the profile is ${JSON.stringify(profile)}`);
         try {
             let userId = profile.user_id;
-            const existingUser = await User.findOne({ userId: profile.user_id });
+            console.log(`in the try catch, userId is: ${userId}`);
+            const existingUser = await User.findOne({ userId: userId });
         } catch (e) {
             console.error('catching the error: ' + e);
             existingUser = false;
