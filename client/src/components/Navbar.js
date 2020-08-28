@@ -32,12 +32,15 @@ export default class Navbar extends Component {
                     options={this.state.dropDownOptions}
                   />
     } else {
-      navRender = <Button primary animated="vertical">
-        <Button.Content visible>Login</Button.Content>
-        <Button.Content hidden>
-          <Icon name="cloud" />
-        </Button.Content>
-      </Button>
+      navRender = 
+        <a href="/auth/login">
+          <Button primary animated="vertical">
+            <Button.Content visible>Login</Button.Content>
+            <Button.Content hidden>
+              <Icon name="cloud" />
+            </Button.Content>
+          </Button>
+        </a>
     }
 
     return(
