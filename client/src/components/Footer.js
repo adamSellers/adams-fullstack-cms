@@ -16,16 +16,16 @@ export default class Footer extends Component {
           <Grid.Column width="4">
             <Menu inverted vertical>
               <Menu.Item>
-                NPSP
+                <a href="https://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP</a>
               </Menu.Item>
               <Menu.Item>
-                EDA
+                <a href="https://www.salesforce.org/highered/data-architecture/">EDA</a>
               </Menu.Item>
               <Menu.Item>
-                NPSP
+                <a href="https://www.salesforce.org/blog/gift-entry-manager-gem-for-higher-ed-advancement-now-available/">GEM</a>
               </Menu.Item>
               <Menu.Item>
-                GEM
+                <a href="https://www.salesforce.org/power-of-us/">Power of Us</a>
               </Menu.Item>
             </Menu>
           </Grid.Column>
