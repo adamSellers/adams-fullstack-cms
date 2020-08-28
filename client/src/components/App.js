@@ -1,13 +1,21 @@
 import React from 'react';
-import Header from './Header';
+import { Container } from 'semantic-ui-react';
+
+// components imported
+import Navbar from './Navbar';
+import Welcome from './Welcome';
+import Footer from './Footer';
 
 
 export default class App extends React.Component {
+
   render() {
     return (
-      <div className="ui container">
-        <Header />
-      </div>
+      <Container>
+        <Navbar />
+        <Welcome />
+        <Footer />
+      </Container>
     );
   }
 }
