@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from './Header';
 
 
 export default class App extends React.Component {
   render() {
     return (
-      <h1 className="ui header">Hi There</h1>
+      <div className="ui container">
+        <Header />
+      </div>
     );
   }
 }
