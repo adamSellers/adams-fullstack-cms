@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Container, Search, Grid, Button, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
 
 
 export default class Navbar extends Component {
   state = { 
     activeItem: 'home',
-    isLoggedIn: 'false' 
+    isLoggedIn: 'false',
+    dropDownOptions: [
+      { key: 'news', value: 'news', text: 'News'},
+      { key: 'img', value: 'img', text: 'Image'},
+      { key: 'cust', value: 'cust', text: 'Custom'}
+    ] 
   }
 
   handleItemClick = (e, { name }) => {
@@ -18,11 +23,16 @@ export default class Navbar extends Component {
   render() {
     const {activeItem} = this.state;
 
-    let searchRender;
+    let navRender;
     if (this.state.isLoggedIn) {
-      searchRender = <Search />
+      navRender = <Dropdown 
+                    placeholder="Select Content Type" 
+                    fluid 
+                    selection 
+                    options={this.state.dropDownOptions}
+                  />
     } else {
-      searchRender = <Button primary animated="vertical">
+      navRender = <Button primary animated="vertical">
         <Button.Content visible>Login</Button.Content>
         <Button.Content hidden>
           <Icon name="cloud" />
@@ -56,7 +66,7 @@ export default class Navbar extends Component {
           </Grid.Column>
           <Grid.Column width="6">
             <Container textAlign="right">
-              {searchRender}
+              {navRender}
             </Container>
           </Grid.Column>  
         </Grid>
