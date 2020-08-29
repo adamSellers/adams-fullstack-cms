@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Container, Dropdown, Grid, Button, Icon, link } from 'semantic-ui-react';
+import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
 
 
 export default class Navbar extends Component {
@@ -25,7 +25,7 @@ export default class Navbar extends Component {
         return;
       case false:
         return (
-            <Button primary animated="vertical" as={link} to="/auth/login">
+            <Button primary animated="vertical" as='a href="/auth/login"' to="/auth/login">
               <Button.Content visible>Login</Button.Content>
               <Button.Content hidden>
                 <Icon name="cloud" />
