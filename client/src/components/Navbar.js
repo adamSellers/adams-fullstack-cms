@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
 
+import LoginButtonNav from './LoginButtonNav';
 
 export default class Navbar extends Component {
   state = { 
@@ -25,12 +26,7 @@ export default class Navbar extends Component {
         return;
       case false:
         return (
-            <Button primary animated="vertical" as='a href="/auth/login"' to="/auth/login">
-              <Button.Content visible>Login</Button.Content>
-              <Button.Content hidden>
-                <Icon name="cloud" />
-              </Button.Content>
-            </Button>
+            <LoginButtonNav />
         );
       default:
         return (
@@ -45,21 +41,21 @@ export default class Navbar extends Component {
   }
 
   // function to determine if we show the logout button
-  showLogout() {
-    if (this.props.auth) {
-      return (
-        <Menu.Item link="/auth/logout" position="right">
-            {/* <Button primary animated="vertical">
-              <Button.Content visible>logout</Button.Content>
-              <Button.Content hidden>
-                <Icon name="sign_out" />
-              </Button.Content>
-            </Button> */}
-            Logout
-        </Menu.Item>
-      )
-    }
-  }
+  // showLogout() {
+  //   if (this.props.auth) {
+  //     return (
+  //       <Menu.Item link="/auth/logout" position="right">
+  //           {/* <Button primary animated="vertical">
+  //             <Button.Content visible>logout</Button.Content>
+  //             <Button.Content hidden>
+  //               <Icon name="sign_out" />
+  //             </Button.Content>
+  //           </Button> */}
+  //           Logout
+  //       </Menu.Item>
+  //     )
+  //   }
+  // }
   
   render() {
     const {activeItem} = this.state;
@@ -85,7 +81,7 @@ export default class Navbar extends Component {
                   active={activeItem === 'profile'}
                   onClick={this.handleItemClick}
                 ></Menu.Item>
-                {this.showLogout}
+                {this.props.auth ? <Menu.Item name='logout' link='/auth/logout'></Menu.Item> : ''}
               </Menu>
             </Container>
           </Grid.Column>
