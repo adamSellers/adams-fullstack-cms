@@ -5,7 +5,6 @@ import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic
 export default class Navbar extends Component {
   state = { 
     activeItem: 'home',
-    isLoggedIn: 'false',
     dropDownOptions: [
       { key: 'news', value: 'news', text: 'News'},
       { key: 'img', value: 'img', text: 'Image'},
@@ -15,33 +14,56 @@ export default class Navbar extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ 
-      activeItem: name,
-      isLoggedIn: !this.state.isLoggedIn
+      activeItem: name
     })
+  }
+
+  // function to set content in navbar if logged in
+  isUserLoggedIn() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return (
+          <a href="/auth/login">
+            <Button primary animated="vertical">
+              <Button.Content visible>Login</Button.Content>
+              <Button.Content hidden>
+                <Icon name="cloud" />
+              </Button.Content>
+            </Button>
+          </a>
+        );
+      default:
+        return (
+          <Dropdown 
+            placeholder="Select Content Type" 
+            fluid 
+            selection 
+            options={this.state.dropDownOptions}
+          />
+        );
+    }
+  }
+
+  // function to determine if we show the logout button
+  showLogout() {
+    if (this.props.auth) {
+      return (
+        <Menu.Item link="/auth/logout" position="right">
+            <Button primary animated="vertical">
+              <Button.Content visible>logout</Button.Content>
+              <Button.Content hidden>
+                <Icon name="sign_out" />
+              </Button.Content>
+            </Button>
+        </Menu.Item>
+      )
+    }
   }
   
   render() {
     const {activeItem} = this.state;
-
-    let navRender;
-    if (this.state.isLoggedIn) {
-      navRender = <Dropdown 
-                    placeholder="Select Content Type" 
-                    fluid 
-                    selection 
-                    options={this.state.dropDownOptions}
-                  />
-    } else {
-      navRender = 
-        <a href="/auth/login">
-          <Button primary animated="vertical">
-            <Button.Content visible>Login</Button.Content>
-            <Button.Content hidden>
-              <Icon name="cloud" />
-            </Button.Content>
-          </Button>
-        </a>
-    }
 
     return(
       <Segment>
@@ -64,12 +86,13 @@ export default class Navbar extends Component {
                   active={activeItem === 'profile'}
                   onClick={this.handleItemClick}
                 ></Menu.Item>
+                {this.showLogout()}
               </Menu>
             </Container>
           </Grid.Column>
           <Grid.Column width="6">
             <Container textAlign="right">
-              {navRender}
+              {this.isUserLoggedIn()}
             </Container>
           </Grid.Column>  
         </Grid>
