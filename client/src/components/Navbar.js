@@ -87,7 +87,7 @@ export default class Navbar extends Component {
           </Grid.Column>
           <Grid.Column width="6">
             <Container textAlign="right">
-              {this.isUserLoggedIn}
+              {this.isUserLoggedIn()}
             </Container>
           </Grid.Column>  
         </Grid>
