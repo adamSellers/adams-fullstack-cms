@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 export default class LoginButtonNav extends Component {
   render() {
