@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
 
 import LoginButtonNav from './LoginButtonNav';
+import { connect } from 'react-redux';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   state = { 
     activeItem: 'home',
     dropDownOptions: [
@@ -98,3 +99,5 @@ export default class Navbar extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(Navbar);
