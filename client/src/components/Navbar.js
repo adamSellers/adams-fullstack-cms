@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Container, Dropdown, Grid, Button, Icon, link } from 'semantic-ui-react';
 
 
 export default class Navbar extends Component {
@@ -25,14 +25,12 @@ export default class Navbar extends Component {
         return;
       case false:
         return (
-          <a href="/auth/login">
-            <Button primary animated="vertical">
+            <Button primary animated="vertical" as={link} to="/auth/login">
               <Button.Content visible>Login</Button.Content>
               <Button.Content hidden>
                 <Icon name="cloud" />
               </Button.Content>
             </Button>
-          </a>
         );
       default:
         return (
@@ -51,12 +49,13 @@ export default class Navbar extends Component {
     if (this.props.auth) {
       return (
         <Menu.Item link="/auth/logout" position="right">
-            <Button primary animated="vertical">
+            {/* <Button primary animated="vertical">
               <Button.Content visible>logout</Button.Content>
               <Button.Content hidden>
                 <Icon name="sign_out" />
               </Button.Content>
-            </Button>
+            </Button> */}
+            Logout
         </Menu.Item>
       )
     }
