@@ -44,21 +44,21 @@ export default class Navbar extends Component {
   }
 
   // function to determine if we show the logout button
-  // showLogout() {
-  //   if (this.props.auth) {
-  //     return (
-  //       <Menu.Item link="/auth/logout" position="right">
-  //           {/* <Button primary animated="vertical">
-  //             <Button.Content visible>logout</Button.Content>
-  //             <Button.Content hidden>
-  //               <Icon name="sign_out" />
-  //             </Button.Content>
-  //           </Button> */}
-  //           Logout
-  //       </Menu.Item>
-  //     )
-  //   }
-  // }
+  showLogout() {
+    if (this.props.auth) {
+      return (
+        <Menu.Item name='logout' link="/auth/logout" position="right">
+            {/* <Button primary animated="vertical">
+              <Button.Content visible>logout</Button.Content>
+              <Button.Content hidden>
+                <Icon name="sign_out" />
+              </Button.Content>
+            </Button> */}
+            Logout
+        </Menu.Item>
+      )
+    }
+  }
   
   render() {
     const {activeItem} = this.state;
@@ -84,7 +84,7 @@ export default class Navbar extends Component {
                   active={activeItem === 'profile'}
                   onClick={this.handleItemClick}
                 ></Menu.Item>
-                {this.props.auth ? <Menu.Item name='logout' link='/auth/logout'></Menu.Item> : ''}
+                {this.showLogout()}
               </Menu>
             </Container>
           </Grid.Column>
