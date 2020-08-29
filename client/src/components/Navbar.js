@@ -25,9 +25,9 @@ export default class Navbar extends Component {
   // function to set content in navbar if logged in
   isUserLoggedIn() {
     switch (this.props.auth) {
+      // case null:
+      //   return;
       case null:
-        return;
-      case false:
         return (
             <LoginButtonNav />
         );
