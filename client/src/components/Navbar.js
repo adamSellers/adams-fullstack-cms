@@ -19,6 +19,9 @@ export default class Navbar extends Component {
     })
   }
 
+  componentDidUpdate(){
+    console.log('component updated: ' + JSON.stringify(this.props.auth));
+  }
   // function to set content in navbar if logged in
   isUserLoggedIn() {
     switch (this.props.auth) {
