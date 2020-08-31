@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { Segment, Container, Card, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-const profile = this.props.auth;
-
 class Profile extends Component {
+
+  constructor(props) {
+    super(props);
+    const profile = this.props.auth;
+  }
 
   render() {
     return (
