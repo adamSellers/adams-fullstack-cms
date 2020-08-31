@@ -24,6 +24,7 @@ function salesforceAuthRoutes(router) {
     /* logout route */
     router.get(
       '/auth/logout',
+      requireLogin,
       (req, res) => {
         // add a further call to SF to logout of SF at some point
         req.session.destroy();
@@ -34,7 +35,6 @@ function salesforceAuthRoutes(router) {
     /* Route to return current user details */
     router.get(
       '/api/v1/current_user',
-      requireLogin,
       (req, res) => {
         res.setHeader('content-type', 'text/javascript; charset=UTF-8');
         res.send(req.user);

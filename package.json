@@ -22,5 +22,6 @@
     "passport-salesforce": "0.0.2",
     "pug": "2.0.0-beta11",
     "redis": "^3.0.2"
-  }
+  },
+  "devDependencies": {}
 }
