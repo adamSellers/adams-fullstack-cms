@@ -5,7 +5,7 @@ import { Button, Icon } from 'semantic-ui-react';
 export default class LoginButtonNav extends Component {
   render() {
     return (
-      <Button primary animated="vertical" as={Link} to='/auth/login'>
+      <Button primary animated="vertical" as='a' path='/auth/login'>
         <Button.Content visible>Login</Button.Content>
         <Button.Content hidden>
           <Icon name="cloud" />
