@@ -11,14 +11,6 @@ import Footer from './Footer';
 
 class App extends Component {
 
-  // once the app component mounts, we will call the express API
-  // for the current user.
-
-  componentDidMount() {
-    this.props.fetchUser();
-    console.log(`App Component mounted, auth is ${this.props.auth}`);
-  }
-
   render() {
     return (
       <Container>
@@ -29,9 +21,4 @@ class App extends Component {
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return { auth: state.auth };
-};
-
 export default connect(null, actions)(App);

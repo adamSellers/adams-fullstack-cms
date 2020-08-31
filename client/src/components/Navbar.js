@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 import LoginButtonNav from './LoginButtonNav';
 
@@ -11,6 +12,11 @@ class Navbar extends Component {
       { key: 'img', value: 'img', text: 'Image'},
       { key: 'cust', value: 'cust', text: 'Custom'}
     ] 
+  }
+
+  componentDidMount() {
+    this.props.fetchUser();
+    console.log(`Navbar Component mounted, auth is ${this.props.auth}`);
   }
 
   handleItemClick = (e, { name }) => {
@@ -99,6 +105,8 @@ class Navbar extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return { auth: state.auth };
+};
 
-
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);
