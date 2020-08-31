@@ -12,7 +12,6 @@ class Profile extends Component {
           state from redux.
           <Divider />
           We'll show this content:
-          {this.props.auth}
         </Container>
       </Segment>
     )
