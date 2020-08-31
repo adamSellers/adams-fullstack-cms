@@ -48,14 +48,13 @@ class Navbar extends Component {
   showLogout() {
     if (this.props.auth) {
       return (
-        <Menu.Item name='logout' link="/auth/logout" position="right">
-            {/* <Button primary animated="vertical">
+        <Menu.Item name='logout' position="right">
+            <Button primary animated="vertical">
               <Button.Content visible>logout</Button.Content>
               <Button.Content hidden>
                 <Icon name="sign_out" />
               </Button.Content>
-            </Button> */}
-            Logout
+            </Button>
         </Menu.Item>
       )
     }
