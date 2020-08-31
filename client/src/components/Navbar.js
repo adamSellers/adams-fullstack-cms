@@ -52,7 +52,7 @@ class Navbar extends Component {
             <Button primary animated="vertical">
               <Button.Content visible>Logout</Button.Content>
               <Button.Content hidden>
-                <Icon name="sign_out" />
+                <Icon name="sign-out" />
               </Button.Content>
             </Button>
         </Menu.Item>
