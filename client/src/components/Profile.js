@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 
 class Profile extends Component {
 
+  componentDidMount(props) {
+    console.log(`auth prop is: ${this.props.auth}`);
+  }
+
   render() {
     return (
       <Segment placeholder>
@@ -11,7 +15,7 @@ class Profile extends Component {
           This is the user's profile page, populated from Salesforce user info. Will need 
           state from redux.
           <Divider />
-          We'll show this content:
+          
         </Container>
       </Segment>
     )
