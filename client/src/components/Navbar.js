@@ -50,7 +50,7 @@ class Navbar extends Component {
       return (
         <Menu.Item name='logout' position="right">
             <Button primary animated="vertical">
-              <Button.Content visible>logout</Button.Content>
+              <Button.Content visible>Logout</Button.Content>
               <Button.Content hidden>
                 <Icon name="sign_out" />
               </Button.Content>
@@ -68,7 +68,7 @@ class Navbar extends Component {
         <Grid>
           <Grid.Column width="10">
             <Container>
-              <Menu stackable>
+              <Menu stackable borderless>
                 <Menu.Item
                   name='home'
                   active={activeItem === 'home'}
@@ -88,7 +88,7 @@ class Navbar extends Component {
               </Menu>
             </Container>
           </Grid.Column>
-          <Grid.Column width="6">
+          <Grid.Column width="6" verticalAlign="middle">
             <Container textAlign="right">
               {this.isUserLoggedIn()}
             </Container>
