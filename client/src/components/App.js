@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -7,6 +8,8 @@ import * as actions from '../actions';
 import Navbar from './Navbar';
 import Welcome from './Welcome';
 import Footer from './Footer';
+import About from './About';
+import Profile from './Profile';
 
 
 class App extends Component {
@@ -18,11 +21,21 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
-        <Navbar />
-        <Welcome />
-        <Footer />
-      </Container>
+      <Router>
+        <Container>
+          <Navbar />
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Footer />
+        </Container>
+      </Router>
     );
   }
 }
