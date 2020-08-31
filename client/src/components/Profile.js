@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 
 class Profile extends Component {
 
-  componentDidMount(props) {
-    let profile = this.props.auth;
-  }
-
   render() {
     return (
       <Segment placeholder>
@@ -16,14 +12,14 @@ class Profile extends Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Card
-                  image={profile.sfProfilePic}
-                  header={`${profile.firstName} ${profile.lastName}`}
-                  description={`Salesforce Auth Token: ${profile.sfAccessToken}`}
+                  image={this.props.auth.sfProfilePic}
+                  header={`${this.props.auth.firstName} ${this.props.auth.lastName}`}
+                  description={`Salesforce Auth Token: ${this.props.auth.sfAccessToken}`}
                 />
               </Grid.Column>
               <Grid.Column width={8} verticalAlign="middle">
-                SF User Id: {profile.userId} <br />
-                SF Instance URL: {profile.sfInstanceUrl}
+                SF User Id: {this.props.auth.userId} <br />
+                SF Instance URL: {this.props.auth.sfInstanceUrl}
               </Grid.Column>
             </Grid.Row>
           </Grid>
