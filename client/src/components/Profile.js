@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Container, Divider, Card, Grid, Image } from 'semantic-ui-react';
+import { Segment, Container, Card, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 class Profile extends Component {
