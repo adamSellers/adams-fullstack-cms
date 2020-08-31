@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Icon, Menu } from 'semantic-ui-react';
 
 const LogoutButtonNav = () => {
   <Menu.Item name='logout' position="right" as='a' href='/auth/logout'>
