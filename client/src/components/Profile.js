@@ -11,11 +11,13 @@ class Profile extends Component {
           <Grid columns={2} divided>
             <Grid.Row>
               <Grid.Column width={8}>
-                <Card
-                  image={this.props.auth.sfProfilePic}
-                  header={`${this.props.auth.firstName} ${this.props.auth.lastName}`}
-                  description={`Salesforce Auth Token: ${this.props.auth.sfAccessToken}`}
-                />
+                <Container>
+                  <Card
+                    image={this.props.auth.sfProfilePic}
+                    header={`${this.props.auth.firstName} ${this.props.auth.lastName}`}
+                    description={`Salesforce Auth Token: ${this.props.auth.sfAccessToken}`}
+                  />
+                </Container>
               </Grid.Column>
               <Grid.Column width={8} verticalAlign="middle">
                 SF User Id: {this.props.auth.userId} <br />
