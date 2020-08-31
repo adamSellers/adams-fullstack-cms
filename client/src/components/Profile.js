@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
-import { Segment, Container, Divider } from 'semantic-ui-react';
+import { Segment, Container, Divider, Card, Grid, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 class Profile extends Component {
 
   componentDidMount(props) {
-    console.log(`auth prop is: ${this.props.auth}`);
+    let profile = this.props.auth;
   }
 
   render() {
     return (
       <Segment placeholder>
         <Container text verticalAlign="middle" stretched>
-          This is the user's profile page, populated from Salesforce user info. Will need 
-          state from redux.
-          <Divider />
-          {JSON.stringify(this.props.auth)}
+          <Grid columns={2} divided>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Card
+                  image={profile.sfProfilePic}
+                  header={`${profile.firstName} ${profile.lastName}`}
+                  description={`Salesforce Auth Token: ${profile.sfAccessToken}`}
+                />
+              </Grid.Column>
+              <Grid.Column width={8} verticalAlign="middle">
+                SF User Id: {profile.userId} <br />
+                SF Instance URL: {profile.sfInstanceUrl}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Container>
       </Segment>
     )
