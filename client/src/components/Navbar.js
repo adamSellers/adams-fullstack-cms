@@ -4,6 +4,7 @@ import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic
 import { connect } from 'react-redux';
 
 import LoginButtonNav from './LoginButtonNav';
+import LogoutButtonNav from './LogoutButtonNav';
 
 class Navbar extends Component {
   state = { 
@@ -46,14 +47,7 @@ class Navbar extends Component {
   showLogout() {
     if (this.props.auth) {
       return (
-        <Menu.Item name='logout' position="right" as='a' href='/auth/logout'>
-            <Button primary animated="vertical">
-              <Button.Content visible>Logout</Button.Content>
-              <Button.Content hidden>
-                <Icon name="sign-out" />
-              </Button.Content>
-            </Button>
-        </Menu.Item>
+        <LogoutButtonNav />
       )
     }
   }
