@@ -14,11 +14,6 @@ class Navbar extends Component {
     ] 
   }
 
-  componentDidMount() {
-    this.props.fetchUser();
-    console.log(`Navbar Component mounted, auth is ${this.props.auth}`);
-  }
-
   handleItemClick = (e, { name }) => {
     this.setState({ 
       activeItem: name
@@ -105,8 +100,8 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { auth: state.auth };
+const mapStateToProps = ({ auth }) => {
+  return { auth };
 };
 
 export default connect(mapStateToProps)(Navbar);

@@ -11,6 +11,11 @@ import Footer from './Footer';
 
 class App extends Component {
 
+  componentDidMount() {
+    this.props.fetchUser();
+    console.log(`Auth Component mounted, auth is ${this.props.auth}`);
+  }
+
   render() {
     return (
       <Container>
