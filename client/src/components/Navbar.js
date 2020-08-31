@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
@@ -48,7 +49,7 @@ class Navbar extends Component {
   showLogout() {
     if (this.props.auth) {
       return (
-        <Menu.Item name='logout' position="right">
+        <Menu.Item name='logout' position="right" as={Link} to='/auth/logout'>
             <Button primary animated="vertical">
               <Button.Content visible>Logout</Button.Content>
               <Button.Content hidden>
@@ -73,16 +74,22 @@ class Navbar extends Component {
                   name='home'
                   active={activeItem === 'home'}
                   onClick={this.handleItemClick}
+                  as={Link}
+                  to='/'
                 ></Menu.Item>
                 <Menu.Item
                   name='about'
                   active={activeItem === 'about'}
                   onClick={this.handleItemClick}
+                  as={Link}
+                  to='/about'
                 ></Menu.Item>
                 <Menu.Item
                   name='profile'
                   active={activeItem === 'profile'}
                   onClick={this.handleItemClick}
+                  as={Link}
+                  to='/profile'
                 ></Menu.Item>
                 {this.showLogout()}
               </Menu>
