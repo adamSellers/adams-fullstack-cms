@@ -24,7 +24,9 @@ class App extends Component {
       <Router>
         <Helmet>
           <title>Title done via react helmet!</title> 
-          <meta httpEquiv="Content-Security-Poliucy" content="default-src 'self'; img-src 'self' 'https://*.documentforce.com' data:"></meta>
+          <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *"></meta>
         </Helmet>
         <Container>
           <Navbar />
