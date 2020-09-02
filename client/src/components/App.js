@@ -25,8 +25,8 @@ class App extends Component {
         <Helmet>
           <title>CMS Helmet</title>
           <meta http-equiv="Content Security Policy" content="default-src *;
-   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-   style-src  'self' 'unsafe-inline' *"></meta>
+   img-src * 'self' data: https:; script-src 'self unsafe-inline unsafe-eval *';
+   style-src  'self unsafe-inline' *"></meta>
         </Helmet>
         <Container>
           <Navbar />
