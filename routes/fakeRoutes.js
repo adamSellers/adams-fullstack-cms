@@ -101,36 +101,25 @@ function fakeRoutes(router) {
     }
   );
 
-  /* SF Callback route */
+  /* Return a list of content types for a given network */
   router.get(
-    '/auth/callback', 
-    passport.authenticate('salesforce'),
-    (req, res) => {
-      // auth successful, redirect to root
-      res.redirect('/');
-    });
+    '/api/v1/content_types', 
+    requireLogin,
+    res.send({
+      physc: 'List of content types for a network id'
+    })
+  );
 
-    /* logout route */
-    router.get(
-      '/auth/logout',
-      requireLogin,
-      (req, res) => {
-        // add a further call to SF to logout of SF at some point
-        req.session.destroy();
-        res.redirect('/');
-      }
-    );
-
-    /* Route to return current user details */
-    router.get(
-      '/api/v1/current_user',
-      (req, res) => {
-        res.setHeader('content-type', 'text/javascript; charset=UTF-8');
-        res.send(req.user);
-      }
-    );
+  /* Return a specific list of content for a given content type id */
+  router.get(
+    '/api/v1/content', 
+    requireLogin,
+    res.send({
+      physc: 'List of content for a given type'
+    })
+  );
 }
 
 module.exports = {
-  salesforceAuthRoutes
+  fakeRoutes
 };
