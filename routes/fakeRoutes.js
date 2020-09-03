@@ -105,19 +105,21 @@ function fakeRoutes(router) {
   router.get(
     '/api/v1/content_types', 
     requireLogin,
+    (req, res) => {
     res.send({
       physc: 'List of content types for a network id'
     })
-  );
+  });
 
   /* Return a specific list of content for a given content type id */
   router.get(
     '/api/v1/content', 
     requireLogin,
+    (req, res) => {
     res.send({
-      physc: 'List of content for a given type'
+      physc: 'List of content for a content type'
     })
-  );
+  });
 }
 
 module.exports = {
