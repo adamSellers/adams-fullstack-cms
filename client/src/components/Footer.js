@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <Grid.Column width="4">
             <Image src="/footerLogo.png" alt="Salesforce.org Architects"></Image>
           </Grid.Column>
-          <Grid.Column width="8">
+          <Grid.Column width="8" textAlign="center">
             <Menu inverted vertical>
               <Menu.Item>
                 <a href="https://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP</a>
