@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import * as actions from '../actions';
 
 // components imported
@@ -22,9 +21,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Helmet>
-          <title>CMS Helmet</title>ß
-        </Helmet>
         <Container>
           <Navbar />
           <Route exact path="/">
