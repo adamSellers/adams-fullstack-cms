@@ -10,9 +10,6 @@ export default class Footer extends Component {
           <Grid.Column width="4">
             <Image src="/footerLogo.png" alt="Salesforce.org Architects"></Image>
           </Grid.Column>
-          <Grid.Column width="8" textAlign="center" verticalAlign="middle">
-            Proudly brought to you by the Salesforce.org Architect team.
-          </Grid.Column>
           <Grid.Column width="4">
             <Menu inverted vertical>
               <Menu.Item>
@@ -28,6 +25,9 @@ export default class Footer extends Component {
                 <a href="https://www.salesforce.org/power-of-us/">Power of Us</a>
               </Menu.Item>
             </Menu>
+          </Grid.Column>
+          <Grid.Column width="8" textAlign="center" verticalAlign="middle">
+            Proudly brought to you by the Salesforce.org Architect team.
           </Grid.Column>
         </Grid>
       </Segment>
