@@ -3,7 +3,7 @@ import { Button, Icon, Menu } from 'semantic-ui-react';
 
 const LogoutButtonNav = () => {
   return (
-    <Button primary animated="vertical" as='a' href='/auth/login'>
+    <Button primary animated="vertical" as='a' href='/auth/logout'>
       <Button.Content visible>Logout</Button.Content>
       <Button.Content hidden>
         <Icon name="sign-out" />
