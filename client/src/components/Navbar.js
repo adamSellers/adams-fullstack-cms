@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 import LoginButtonNav from './LoginButtonNav';
 import LogoutButtonNav from './LogoutButtonNav';
+import SelectCommunity from './SelectCommunity';
 
 class Navbar extends Component {
   state = { 
@@ -32,6 +33,14 @@ class Navbar extends Component {
         );
     }
   }
+
+  showCommunityDropdown() {
+    if (this.props.auth) {
+      return (
+        <SelectCommunity></SelectCommunity>
+      )
+    };
+  }
   
   render() {
     const {activeItem} = this.state;
@@ -39,7 +48,7 @@ class Navbar extends Component {
     return(
       <Segment color="teal">
         <Grid>
-          <Grid.Column width="10">
+          <Grid.Column width="8">
             <Container>
               <Menu stackable borderless>
                 <Menu.Item
@@ -66,7 +75,10 @@ class Navbar extends Component {
               </Menu>
             </Container>
           </Grid.Column>
-          <Grid.Column width="6" verticalAlign="middle">
+          <Grid.Column width="5">
+            {this.showCommunityDropdown()}
+          </Grid.Column>
+          <Grid.Column width="3" verticalAlign="middle">
             <Container textAlign="right">
               {this.isUserLoggedIn()}
             </Container>
