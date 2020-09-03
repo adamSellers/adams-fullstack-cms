@@ -58,7 +58,7 @@ class Navbar extends Component {
     const {activeItem} = this.state;
 
     return(
-      <Segment color="#75c8f9">
+      <Segment color="teal">
         <Grid>
           <Grid.Column width="10">
             <Container>
