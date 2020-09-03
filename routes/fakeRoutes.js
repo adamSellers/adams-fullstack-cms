@@ -284,7 +284,9 @@ function fakeRoutes(router) {
   );
 
   /* Return a list of content for a given community id, filter out
-  by content type from the dropdown */
+  by content type from the dropdown. Grabbed from the content
+  deliver API: 
+  /services/data/v{{version}}/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery */
   router.get(
     '/api/v1/getContent', 
     requireLogin,
