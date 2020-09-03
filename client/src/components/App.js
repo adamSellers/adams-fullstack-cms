@@ -23,10 +23,7 @@ class App extends Component {
     return (
       <Router>
         <Helmet>
-          <title>CMS Helmet</title>
-          <meta http-equiv="Content Security Policy" content="default-src *;
-   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-   style-src  'self' 'unsafe-inline' *"></meta>
+          <title>CMS Helmet</title>ß
         </Helmet>
         <Container>
           <Navbar />
