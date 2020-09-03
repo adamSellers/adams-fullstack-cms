@@ -8,12 +8,7 @@ import LogoutButtonNav from './LogoutButtonNav';
 
 class Navbar extends Component {
   state = { 
-    activeItem: 'home',
-    dropDownOptions: [
-      { key: 'news', value: 'news', text: 'News'},
-      { key: 'img', value: 'img', text: 'Image'},
-      { key: 'cust', value: 'cust', text: 'Custom'}
-    ] 
+    activeItem: 'home'
   }
 
   handleItemClick = (e, { name }) => {
@@ -33,24 +28,8 @@ class Navbar extends Component {
         );
       default:
         return (
-          <Dropdown 
-            placeholder="Select Content Type" 
-            fluid 
-            selection 
-            options={this.state.dropDownOptions}
-          />
-        );
-    }
-  }
-
-  // function to determine if we show the logout button
-  showLogout() {
-    if (this.props.auth) {
-      return (
-        <Menu.Item name='logout' position="right" as='a' href='/auth/logout'>
           <LogoutButtonNav />
-        </Menu.Item>
-      )
+        );
     }
   }
   
@@ -84,7 +63,6 @@ class Navbar extends Component {
                   as={Link}
                   to='/profile'
                 ></Menu.Item>
-                {this.showLogout()}
               </Menu>
             </Container>
           </Grid.Column>
