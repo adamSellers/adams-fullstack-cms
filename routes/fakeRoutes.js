@@ -2,7 +2,9 @@ const passport = require('passport');
 const requireLogin = require('../middlewares/requireLogin');
 
 function fakeRoutes(router) {
-  /* Return a list of community ID's and names */
+  /* Return a list of community ID's and names using this
+  query string on the REST API:
+  /services/data/v49.0/query/?q=SELECT+Id,+name+from+Network */
   router.get(
     '/api/v1/communities',
     requireLogin,
