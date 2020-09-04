@@ -10,6 +10,7 @@ import Welcome from './Welcome';
 import Footer from './Footer';
 import About from './About';
 import Profile from './Profile';
+import SelectContentType from './SelectContentType';
 
 
 class App extends Component {
@@ -25,6 +26,9 @@ class App extends Component {
           <Navbar />
           <Route exact path="/">
             <Welcome />
+          </Route>
+          <Route exact path="/content-type">
+            <SelectContentType />
           </Route>
           <Route exact path="/profile">
             <Profile />
