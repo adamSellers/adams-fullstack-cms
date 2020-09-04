@@ -75,7 +75,7 @@ class Navbar extends Component {
               </Menu>
             </Container>
           </Grid.Column>
-          <Grid.Column width="5">
+          <Grid.Column width="5" verticalAlign="middle">
             {this.showCommunityDropdown()}
           </Grid.Column>
           <Grid.Column width="3" verticalAlign="middle">
