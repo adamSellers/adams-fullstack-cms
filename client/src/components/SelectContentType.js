@@ -7,8 +7,8 @@ export default class SelectContentType extends Component {
       <Segment placeholder>
         <Grid stretched stackable textAlign="center" verticalAlign="middle">
           <Grid.Row>
-            <Grid.Column stretched textAlign="center">
-              <Header as="h2">
+            <Grid.Column stretched>
+              <Header as="h2" textAlign="center">
                 <Icon name="settings" />
                 <Header.Subheader>
                   Select your content type
