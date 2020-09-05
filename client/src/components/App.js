@@ -17,9 +17,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchUser();
-    if (this.props.auth) {
-      this.props.fetchCommunities();
-    }
   }
 
   render() {
