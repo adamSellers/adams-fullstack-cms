@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
-export default class SelectCommunity extends Component {
+class SelectCommunity extends Component {
 
   componentDidMount() {
     console.log(state);
@@ -13,3 +14,9 @@ export default class SelectCommunity extends Component {
     )
   };
 };
+
+function mapStateToProps({ communities }) {
+  return { communities };
+}
+
+export default connect(mapStateToProps)(SelectCommunity);
