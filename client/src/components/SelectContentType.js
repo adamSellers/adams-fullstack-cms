@@ -8,7 +8,7 @@ export default class SelectContentType extends Component {
         <Grid stretched stackable textAlign="center" verticalAlign="middle">
           <Grid.Row>
             <Grid.Column stretched>
-              <Header as="h2">
+              <Header as="h2" textAlign="center">
                 <Icon name="settings" />
                 <Header.Subheader>
                   Select your content type
@@ -18,7 +18,7 @@ export default class SelectContentType extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column stretched>
-              <Dropdown placeholder="Select Content Type fluid" />
+              <Dropdown placeholder="Select Content Type fluid" fluid />
             </Grid.Column>
           </Grid.Row>
         </Grid>
