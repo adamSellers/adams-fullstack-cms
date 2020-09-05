@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class SelectCommunity extends Component {
 
   componentDidMount() {
-    console.log(state);
     console.log(JSON.stringify(this.props));
   }
   render() {
