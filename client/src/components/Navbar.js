@@ -12,6 +12,12 @@ class Navbar extends Component {
     activeItem: 'home'
   }
 
+  componentDidMount() {
+    if (this.props.auth) {
+      this.props.communities();
+    }
+  }
+
   handleItemClick = (e, { name }) => {
     this.setState({ 
       activeItem: name
@@ -89,8 +95,8 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  return { auth };
+const mapStateToProps = ({ auth, communities }) => {
+  return { auth, communities };
 };
 
 export default connect(mapStateToProps)(Navbar);
