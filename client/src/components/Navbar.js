@@ -12,12 +12,6 @@ class Navbar extends Component {
     activeItem: 'home'
   }
 
-  componentDidMount() {
-    if (this.props.auth) {
-      this.props.fetchCommunities();
-    }
-  }
-
   handleItemClick = (e, { name }) => {
     this.setState({ 
       activeItem: name
@@ -95,8 +89,8 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, communities }) => {
-  return { auth, communities };
+const mapStateToProps = ({ auth }) => {
+  return { auth };
 };
 
 export default connect(mapStateToProps)(Navbar);
