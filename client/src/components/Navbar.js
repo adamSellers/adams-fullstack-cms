@@ -14,7 +14,7 @@ class Navbar extends Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      this.props.communities();
+      this.props.fetchCommunities();
     }
   }
 
