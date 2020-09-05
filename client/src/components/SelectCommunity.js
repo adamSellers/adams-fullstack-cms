@@ -9,6 +9,7 @@ class SelectCommunity extends Component {
     this.props.fetchCommunities();
   }
   render() {
+    console.log(`are there community props?: ${JSON.stringify(this.props.communities)}`);
     return (
       <Dropdown placeholder="select a community"></Dropdown>
     )
