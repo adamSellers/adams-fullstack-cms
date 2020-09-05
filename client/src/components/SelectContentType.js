@@ -7,8 +7,8 @@ export default class SelectContentType extends Component {
       <Segment placeholder>
         <Grid stretched stackable textAlign="center" verticalAlign="middle">
           <Grid.Row>
-            <Grid.Column stretched>
-              <Header as="h2" textAlign="center">
+            <Grid.Column stretched textAlign="center">
+              <Header as="h2">
                 <Icon name="settings" />
                 <Header.Subheader>
                   Select your content type
@@ -23,7 +23,6 @@ export default class SelectContentType extends Component {
           </Grid.Row>
         </Grid>
       </Segment>
-
     )
   };
 }
