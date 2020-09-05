@@ -4,9 +4,8 @@ import { Dropdown } from 'semantic-ui-react';
 export default class SelectCommunity extends Component {
 
   componentDidMount() {
-    let comms = this.props.fetchCommunities();
-    // see if we can console log this out
-    console.log(JSON.stringify(comms));
+    console.log(state);
+    console.log(JSON.stringify(this.props));
   }
   render() {
     return (
