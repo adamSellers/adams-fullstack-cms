@@ -6,9 +6,8 @@ import * as actions from '../actions';
 class SelectCommunity extends Component {
 
   componentDidMount() {
-    const testCall = this.props.fetchCommunities();
+    this.props.fetchCommunities();
     console.log('Props: ' + JSON.stringify(this.props));
-    console.log('testCall: ' + JSON.stringify(testCall));
   }
   render() {
     return (
