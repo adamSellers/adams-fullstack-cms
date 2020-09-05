@@ -9,6 +9,7 @@ function fakeRoutes(router) {
     '/api/v1/communities',
     requireLogin,
     (req, res) => {
+      console.log('the community api got called');
       res.send(
         {
           "communities": [
@@ -291,7 +292,6 @@ function fakeRoutes(router) {
     '/api/v1/getContent', 
     requireLogin,
     (req, res) => {
-      console.log('the community api got called');
     res.send(
       {
         "currentPageUrl": "/services/data/v49.0/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery?page=0&pageSize=25",
