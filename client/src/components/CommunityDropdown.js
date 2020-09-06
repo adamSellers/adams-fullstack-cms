@@ -8,7 +8,15 @@ class CommunityDropdown extends Component {
     console.log(`is this bit an array: ${Array.isArray(this.props.communities)}`);
     let dropdownOptions = [];
     for (let i in this.props.communities) {
-      dropdownOptions.push(this.props.communities[i]);
+      if(this.props.communities[i].status === "Live") {
+        let optionToAdd = {
+          key: this.props.communities[i].id,
+          value: this.props.communities[i],
+          text: this.props.communities[i].name
+        };
+
+        dropdownOptions.push(optionToAdd);
+      }
     }
 
     console.log(`the dropdown options are: ${dropdownOptions}`);
@@ -20,8 +28,8 @@ class CommunityDropdown extends Component {
         fluid
         search
         selection
-        options={this.options}
-        onChange={() => console.log(`on change selected, value is: ${this.options.value}`)}
+        options={this.dropdownOptions}
+        onChange={() => console.log(`on change selected, value is: ${this.dropdownOptions.value}`)}
         />
     );
   };
