@@ -27,8 +27,8 @@ class Profile extends Component {
           </Grid>
         </Container>
       </Segment>
-    )
-  }
+    );
+  };
 }
 
 const mapStateToProps = ({ auth }) => {
