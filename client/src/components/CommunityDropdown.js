@@ -20,7 +20,7 @@ class CommunityDropdown extends Component {
         placeholder="select a community" 
         fluid
         options={this.options}
-        onChange={() => console.log(`on change selected, value is: ${options.value}`)}
+        onChange={() => console.log(`on change selected, value is: ${this.options.value}`)}
         />
     );
   };
