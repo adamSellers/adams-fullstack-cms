@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 class Profile extends Component {
 
+  componentDidMount() {
+    const profile = this.props.auth;
+  }
+
+
   componentDidUpdate() {
     const profile = this.props.auth;
   }
