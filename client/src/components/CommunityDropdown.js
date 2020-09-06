@@ -11,7 +11,7 @@ class CommunityDropdown extends Component {
       dropdownOptions.push(this.props.communities[i]);
     }
 
-    console.log(`the dropdown options are: ${this.dropdownOptions}`);
+    console.log(`the dropdown options are: ${dropdownOptions}`);
   }
   render() {
     return(
