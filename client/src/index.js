@@ -11,6 +11,7 @@ import reducers from './reducers';
 
 // create the redux store that is used in the app
 const store = createStore( reducers, {}, applyMiddleware(reduxThunk));
+console.log(`in index.js the store is: ${JSON.stringify(store.getState())}`);
 
 ReactDOM.render(
   <Provider store={store}> <App /> </Provider>,
