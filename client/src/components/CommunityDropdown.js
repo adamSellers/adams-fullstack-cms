@@ -4,7 +4,7 @@ import { Dropdown, Icon } from 'semantic-ui-react';
 
 
 class CommunityDropdown extends Component {
-  componentDidMount() {
+  componentDidUpdate() {
     console.log(`are there props?: ${JSON.stringify(this.props.communities)}`);
   }
   render() {
