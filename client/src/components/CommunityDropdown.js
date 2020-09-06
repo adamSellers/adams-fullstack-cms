@@ -7,6 +7,7 @@ class CommunityDropdown extends Component {
   componentDidUpdate() {
     const dropdownOptions = Object.keys(this.props.communities);
     console.log(`the options are now an array: ${Array.isArray(dropdownOptions)}`);
+    console.log(`the array is: ${JSON.stringify(dropdownOptions)}`);
   }
   render() {
     return(
