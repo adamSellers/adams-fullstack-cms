@@ -6,7 +6,12 @@ import { Dropdown, Icon } from 'semantic-ui-react';
 class CommunityDropdown extends Component {
   componentDidUpdate() {
     console.log(`is this bit an array: ${Array.isArray(this.props.communities)}`);
-    this.props.communities.forEach(el => console.log(`the element is: ${el}`));
+    let dropdownOptions = [];
+    for (let i in this.props.communities) {
+      dropdownOptions.push(this.props.communities[i]);
+    }
+
+    console.log(`the dropdown options are: ${this.dropdownOptions}`);
   }
   render() {
     return(
