@@ -7,7 +7,8 @@ import CommunityDropdown from './CommunityDropdown';
 class SelectCommunity extends Component {
 
   componentDidMount() {
-    this.props.fetchCommunities();
+    this.props.fetchCommunities()
+      .then( console.log(`props in Select Community: ${JSON.stringify(this.props)}`));
   }
   render() {
     return (
