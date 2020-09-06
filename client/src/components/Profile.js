@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 
 class Profile extends Component {
 
-  render() {
+  componentDidUpdate() {
     const profile = this.props.auth;
+  }
+
+  render() {
     return (
       <Segment placeholder>
         <Container text verticalAlign="middle" stretched>
