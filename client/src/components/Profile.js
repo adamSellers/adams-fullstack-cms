@@ -17,15 +17,15 @@ class Profile extends Component {
               <Grid.Column width={8}>
                 <Container>
                   <Card
-                    image={profile.sfProfilePic}
-                    header={`${profile.firstName} ${profile.lastName}`}
-                    description={`Salesforce Auth Token: ${profile.sfAccessToken}`}
+                    image={this.profile.sfProfilePic}
+                    header={`${this.profile.firstName} ${this.profile.lastName}`}
+                    description={`Salesforce Auth Token: ${this.profile.sfAccessToken}`}
                   />
                 </Container>
               </Grid.Column>
               <Grid.Column width={8} verticalAlign="middle">
-                SF User Id: {profile.userId} <br />
-                SF Instance URL: {profile.sfInstanceUrl}
+                SF User Id: {this.profile.userId} <br />
+                SF Instance URL: {this.profile.sfInstanceUrl}
               </Grid.Column>
             </Grid.Row>
           </Grid>
