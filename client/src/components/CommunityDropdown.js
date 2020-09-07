@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown, Icon } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom'; 
 
 const dropdownOptions = [];
 
@@ -20,9 +21,9 @@ class CommunityDropdown extends Component {
     console.log(`dropdown options should now be built: ${JSON.stringify(dropdownOptions)}`);
   }
 
-  // onDropdownChange = (data) => {
-  //   console.log(`is there a value? ${JSON.stringify(data)}`);
-  // }
+  onDropdownChange = (evt) => {
+    console.log(`is there a value? ${JSON.stringify(evt)}`);
+  }
   render() {
     return(
       <Dropdown 
@@ -31,7 +32,7 @@ class CommunityDropdown extends Component {
         search
         selection
         options={dropdownOptions}
-        onChange={(evt) => console.log(`event is: ${JSON.stringify(evt.target)}`)}
+        onChange={(evt) => this.onDropdownChange(evt)}
         />
     );
   };
@@ -41,4 +42,4 @@ function mapStateToProps({ communities }) {
   return ({ communities });
 };
 
-export default connect(mapStateToProps)(CommunityDropdown);
+export default withRouter(connect(mapStateToProps)(CommunityDropdown));
