@@ -31,7 +31,7 @@ class CommunityDropdown extends Component {
         search
         selection
         options={dropdownOptions}
-        onChange={(evt) => console.log(`event is: ${evt.target.value}`)}
+        onChange={(evt) => console.log(`event is: ${JSON.stringify(evt.target)}`)}
         />
     );
   };
