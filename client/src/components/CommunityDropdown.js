@@ -8,6 +8,7 @@ class CommunityDropdown extends Component {
   
   componentDidUpdate() {
     console.log(`is this bit an array: ${Array.isArray(this.dropdownOptions)}`);
+    console.log(`the networks prop is: ${this.dropdownOptions}`);
     
   }
   render() {
