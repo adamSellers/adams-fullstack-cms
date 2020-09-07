@@ -11,20 +11,7 @@ class CommunityDropdown extends Component {
     for (var i in this.props.communities) {
       console.log(`looping through and i is: ${JSON.stringify(i)}`);
       
-      // if(this.props.communities[i].status === "Live") {
-      //   let optionToAdd = {
-      //     key: this.props.communities[i].id,
-      //     value: this.props.communities[i],
-      //     text: this.props.communities[i].name
-      //   };
-
-      //   console.log(`optionToAdd is: ${optionToAdd}`);
-
-      //   this.dropdownOptions.push(optionToAdd);
-      }
     }
-
-    console.log(`the dropdown options are: ${this.dropdownOptions}`);
   }
   render() {
     return(
