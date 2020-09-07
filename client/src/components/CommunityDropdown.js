@@ -4,11 +4,10 @@ import { Dropdown, Icon } from 'semantic-ui-react';
 
 
 class CommunityDropdown extends Component {
-  dropdownOptions = this.props.networks;
+  dropdownOptions = this.props.networks.communities;
   
   componentDidUpdate() {
     console.log(`is this bit an array: ${Array.isArray(this.dropdownOptions)}`);
-    console.log(`the networks prop is: ${this.dropdownOptions}`);
     
   }
   render() {
@@ -25,8 +24,8 @@ class CommunityDropdown extends Component {
   };
 }
 
-function mapStateToProps({ networks }) {
-  return ({ networks });
+function mapStateToProps({ communities }) {
+  return ({ communities });
 };
 
 export default connect(mapStateToProps)(CommunityDropdown);
