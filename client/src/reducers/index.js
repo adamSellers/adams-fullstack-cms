@@ -4,5 +4,5 @@ import communitiesReducer from './communitiesReducer';
 
 export default combineReducers({
   auth: authReducer,
-  communities: communitiesReducer
+  networks: communitiesReducer
 });
