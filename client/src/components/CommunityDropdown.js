@@ -28,6 +28,7 @@ class CommunityDropdown extends Component {
         search
         selection
         options={dropdownOptions}
+        loading
         />
     );
   };
