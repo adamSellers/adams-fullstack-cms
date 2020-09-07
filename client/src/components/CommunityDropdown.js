@@ -9,7 +9,9 @@ class CommunityDropdown extends Component {
   componentDidUpdate() {
     console.log(`is this bit an array: ${Array.isArray(this.props.communities)}`);
     for (var i in this.props.communities) {
-      console.log(`looping through and i is: ${JSON.stringify(i)}`);
+      if (this.props.communities.hasOwnProperty(i)) {
+        console.log(`i in the loop is: ${this.props.communities[i]}`);
+      }
       
     }
   }
