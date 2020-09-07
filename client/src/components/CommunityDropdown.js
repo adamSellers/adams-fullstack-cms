@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown, Icon } from 'semantic-ui-react';
+import { json } from 'body-parser';
 
 
 class CommunityDropdown extends Component {
-  dropdownOptions = this.props.networks.communities;
+  dropdownOptions = this.props.communities;
   
   componentDidUpdate() {
-    console.log(`is this bit an array: ${Array.isArray(this.dropdownOptions)}`);
+    console.log(`is this bit an array: ${Array.isArray(this.props.communities['communities'])}`);
+    console.log(`as props.communities: ${JSON.stringify(this.props.communities)}`);
+    console.log(`as dropdown options: ${JSON.stringify(this.dropdownOptions)}`);
     
   }
   render() {
