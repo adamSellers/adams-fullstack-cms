@@ -24,8 +24,8 @@ class CommunityDropdown extends Component {
   };
 }
 
-function mapStateToProps({ communities }) {
-  return ({ communities });
+function mapStateToProps({ networks }) {
+  return ({ networks });
 };
 
 export default connect(mapStateToProps)(CommunityDropdown);
