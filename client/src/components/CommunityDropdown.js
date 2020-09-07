@@ -21,8 +21,8 @@ class CommunityDropdown extends Component {
     console.log(`dropdown options should now be built: ${JSON.stringify(dropdownOptions)}`);
   }
 
-  onDropdownChange = (evt) => {
-    console.log(`is there a value? ${evt.target.value}`);
+  onDropdownChange = (data) => {
+    console.log(`is there a value? ${JSON.stringify(data)}`);
   }
   render() {
     return(
@@ -32,7 +32,7 @@ class CommunityDropdown extends Component {
         search
         selection
         options={dropdownOptions}
-        onChange={(evt) => this.onDropdownChange(evt)}
+        onChange={(data) => this.onDropdownChange(data)}
         />
     );
   };
