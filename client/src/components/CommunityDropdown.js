@@ -22,7 +22,7 @@ class CommunityDropdown extends Component {
   }
 
   onDropdownChange = (evt) => {
-    console.log(`is there a value? ${JSON.stringify(evt)}`);
+    console.log(`is there a value? ${evt.target}`);
   }
   render() {
     return(
