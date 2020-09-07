@@ -6,7 +6,6 @@ const dropdownOptions = [];
 
 class CommunityDropdown extends Component {
   componentDidUpdate() {
-    console.log(`as props.communities: ${JSON.stringify(this.props.communities)}`);
     let stateArray = this.props.communities['communities'];
     for (let i = 0; i < stateArray.length; i ++ ) {
       if (stateArray[i].status === 'Live') {
@@ -21,8 +20,8 @@ class CommunityDropdown extends Component {
     console.log(`dropdown options should now be built: ${JSON.stringify(dropdownOptions)}`);
   }
 
-  onDropdownChange = (value) => {
-    console.log(`is there a value? ${value}`);
+  onDropdownChange = (event) => {
+    console.log(`is there a value? ${event.target.value}`);
   }
   render() {
     return(
@@ -32,7 +31,7 @@ class CommunityDropdown extends Component {
         search
         selection
         options={dropdownOptions}
-        onChange={this.onDropdownChange(dropdownOptions.value)}
+        onChange={this.onDropdownChange(event)}
         />
     );
   };

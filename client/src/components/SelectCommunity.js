@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Dropdown } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import CommunityDropdown from './CommunityDropdown';
