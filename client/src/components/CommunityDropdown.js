@@ -22,11 +22,11 @@ class CommunityDropdown extends Component {
 
         console.log(`optionToAdd is: ${optionToAdd}`);
 
-        dropdownOptions.push(optionToAdd);
+        this.dropdownOptions.push(optionToAdd);
       }
     }
 
-    console.log(`the dropdown options are: ${dropdownOptions}`);
+    console.log(`the dropdown options are: ${this.dropdownOptions}`);
   }
   render() {
     return(
