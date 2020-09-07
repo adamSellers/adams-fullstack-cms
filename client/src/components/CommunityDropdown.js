@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Dropdown, Icon } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom'; 
 
 const dropdownOptions = [];
@@ -22,7 +22,7 @@ class CommunityDropdown extends Component {
   }
 
   onDropdownChange = (data) => {
-    console.log(`is there a value? ${JSON.stringify(data)}`);
+    console.log(`is there a value? ${data}`);
   }
   render() {
     return(
