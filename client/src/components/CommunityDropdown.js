@@ -4,9 +4,14 @@ import { Dropdown, Icon } from 'semantic-ui-react';
 
 
 class CommunityDropdown extends Component {
+  constructor(props) {
+    super(props);
+
+    const dropdownOptions = [];
+  }
+  
   componentDidUpdate() {
     console.log(`is this bit an array: ${Array.isArray(this.props.communities)}`);
-    const dropdownOptions = [];
     for (let i in this.props.communities) {
       if(this.props.communities[i].status === "Live") {
         let optionToAdd = {
@@ -14,6 +19,8 @@ class CommunityDropdown extends Component {
           value: this.props.communities[i],
           text: this.props.communities[i].name
         };
+
+        console.log(`optionToAdd is: ${optionToAdd}`);
 
         dropdownOptions.push(optionToAdd);
       }
