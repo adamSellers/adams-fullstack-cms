@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown, Icon } from 'semantic-ui-react';
-import { json } from 'body-parser';
 
+const dropdownOptions = [];
 
 class CommunityDropdown extends Component {
-  dropdownOptions = this.props.communities;
-  
   componentDidUpdate() {
-    console.log(`is this bit an array: ${Array.isArray(this.props.communities['communities'])}`);
     console.log(`as props.communities: ${JSON.stringify(this.props.communities)}`);
-    console.log(`as dropdown options: ${JSON.stringify(this.dropdownOptions)}`);
-    
+    let stateArray = this.props.communities['communities'];
+    for (let i = 0; i < stateArray.length; i ++ ) {
+      if (stateArray[i].status === 'Live') {
+        let itemToPush = {
+          key: stateArray[i].id,
+          value: stateArray[i].id,
+          text: stateArray[i].name
+        }
+        dropdownOptions.push(itemToPush);
+      }
+    }
+    console.log(`dropdown options should now be built: ${JSON.stringify(dropdownOptions)}`);
   }
   render() {
     return(
@@ -20,8 +27,7 @@ class CommunityDropdown extends Component {
         fluid
         search
         selection
-        options={this.dropdownOptions}
-        onChange={() => console.log(`on change selected, value is: ${this.dropdownOptions.value}`)}
+        options={dropdownOptions}
         />
     );
   };
