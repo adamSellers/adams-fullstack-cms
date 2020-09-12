@@ -1,15 +1,5 @@
 import { communities } from '../actions/types';
 
-// // create the communities reducer and export it
-// export default function(state = null, action) {
-//   switch (action.type) {
-//     case GET_COMMUNITIES:
-//       return action.payload || false;
-//     default:
-//       return state;
-//   }
-// }
-
 // set the initial state first
 const initialState = {
   isLoading: true,
@@ -26,6 +16,7 @@ const communtiesReducer = (state = initialState, action) => {
       // reduce the returned state down to an array of options
       // filter here to limit to active only
       let activeCommunities = action.payload['communities'].filter(record => record.status === 'Live');
+      console.log(`in the reducer, active communities: ${JSON.stringify(activeCommunities)}`);
       return {...state, data: activeCommunities, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
