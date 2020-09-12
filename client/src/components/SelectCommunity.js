@@ -11,7 +11,13 @@ class SelectCommunity extends Component {
   }
   render() {
     return (
-    <div>state: {JSON.stringify(this.props.data)}</div>
+    <Dropdown 
+      options={this.props.data}
+      placeholder="Select a community"
+      fluid
+      selection
+      loading={this.props.loading}
+    />
     )
   };
 };

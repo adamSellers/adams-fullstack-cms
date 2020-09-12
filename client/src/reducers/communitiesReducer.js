@@ -12,8 +12,8 @@ import { communities } from '../actions/types';
 
 // set the initial state first
 const initialState = {
-  isLoading: false,
-  data: null,
+  isLoading: true,
+  data: [],
   error: ""
 }
 
@@ -23,7 +23,10 @@ const communtiesReducer = (state = initialState, action) => {
     case "COMMUNITIES":
       return {...state, isLoading: true};
     case "communities_returned":
-      return {...state, data: action.payload, isLoading: false};
+      // reduce the returned state down to an array of options
+      // filter here to limit to active only
+      let activeCommunities = action.payload['communities'].filter(record => record.status === 'Live');
+      return {...state, data: activeCommunities, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
     default:
