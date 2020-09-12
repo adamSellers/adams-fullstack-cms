@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-import CommunityDropdown from './CommunityDropdown';
+import { Dropdown } from 'semantic-ui-react';
 
 class SelectCommunity extends Component {
 
