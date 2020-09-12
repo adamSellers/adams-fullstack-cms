@@ -10,7 +10,7 @@ class SelectCommunity extends Component {
   }
   render() {
     return (
-    <div>state: {JSON.stringify(this.props)}</div>
+    <div>state: {JSON.stringify(this.props.data)}</div>
     )
   };
 };
