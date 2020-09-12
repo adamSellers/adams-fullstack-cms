@@ -18,7 +18,7 @@ const initialState = {
 }
 
 // set the state depending on the dispatch coming in
-const communtiesReducer = (state = initialState, action) {
+const communtiesReducer = (state = initialState, action) => {
   switch(action.type) {
     case "COMMUNITIES":
       return {...state, isLoading: true};
