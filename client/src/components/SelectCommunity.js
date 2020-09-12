@@ -5,7 +5,7 @@ import { fetchCommunities } from '../actions';
 
 class SelectCommunity extends Component {
 
-  componentDidUpdate() {
+  componentDidMount() {
     console.log(`about to fire the props thingy, component did mount`);
     this.props.onFetchCommunities();
   }
