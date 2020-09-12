@@ -7,8 +7,8 @@ export const fetchUser = () => async dispatch => {
 };
 
 /* This action will return the list of communities available */
-export const fetchCommunities = () => async dispatch => {
-  return (dispatch) => {
+export const fetchCommunities = () => dispatch => {
+  return async (dispatch) => {
     const res = await axios.get('api/v1/communities');
     dispatch({ type: "communities_returned", payload: res.data })
     .catch(err => dispatch(
