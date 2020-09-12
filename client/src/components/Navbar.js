@@ -41,6 +41,14 @@ class Navbar extends Component {
       )
     };
   }
+
+  onHomeClick() {
+    if (this.props.auth) {
+      return '/content-type';
+    } else {
+      return '/';
+    }
+  }
   
   render() {
     const {activeItem} = this.state;
@@ -56,7 +64,7 @@ class Navbar extends Component {
                   active={activeItem === 'home'}
                   onClick={this.handleItemClick}
                   as={Link}
-                  to='/'
+                  to={this.onHomeClick()}
                 ></Menu.Item>
                 <Menu.Item
                   name='about'
