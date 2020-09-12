@@ -15,7 +15,15 @@ const communtiesReducer = (state = initialState, action) => {
     case "communities_returned":
       // reduce the returned state down to an array of options
       // filter here to limit to active only
-      let activeCommunities = action.payload['communities'].filter(record => record.status === 'Live');
+      let activeCommunities = action.payload['communities'].filter(record => {
+        if( record.status === 'Live') {
+          return {
+            key: record.id,
+            value: record.id,
+            text: record.name
+          }
+        }
+      });
       console.log(`in the reducer, active communities: ${JSON.stringify(activeCommunities)}`);
       return {...state, data: activeCommunities, isLoading: false};
     case "ERROR":
