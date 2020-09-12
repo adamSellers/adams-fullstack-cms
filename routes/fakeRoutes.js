@@ -1,5 +1,6 @@
 const passport = require('passport');
 const requireLogin = require('../middlewares/requireLogin');
+const serverLag = require('../middlewares/serverLag');
 
 function fakeRoutes(router) {
   /* Return a list of community ID's and names using the 
@@ -8,6 +9,7 @@ function fakeRoutes(router) {
   router.get(
     '/api/v1/communities',
     requireLogin,
+    serverLag,
     (req, res) => {
       console.log('the community api got called');
       res.send(
