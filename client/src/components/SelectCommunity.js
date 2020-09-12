@@ -11,17 +11,17 @@ class SelectCommunity extends Component {
   }
 
   componentDidUpdate() {
-    console.log(`component updated, are there props? ${JSON.stringify(this.state)}`);
+    console.log(`component updated, are there props? ${JSON.stringify(this.props.communities)}`);
   }
   render() {
-    console.log(`are there data props?: ${JSON.stringify(this.state)}`);
+    console.log(`are there data props?: ${JSON.stringify(this.props.communities)}`);
     return (
     <Dropdown 
-      options={this.props.data}
+      options={this.props.communities.data}
       placeholder="Select a community"
       fluid
       selection
-      loading={this.props.loading}
+      loading={this.props.communities.isLoading}
     />
     )
   };
