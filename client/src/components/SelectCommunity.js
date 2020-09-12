@@ -11,10 +11,10 @@ class SelectCommunity extends Component {
   }
 
   componentDidUpdate() {
-    console.log(`component updated, are there props? ${JSON.stringify(this.props)}`);
+    console.log(`component updated, are there props? ${JSON.stringify(this.state)}`);
   }
   render() {
-    console.log(`are there data props?: ${JSON.stringify(this.props)}`);
+    console.log(`are there data props?: ${JSON.stringify(this.state)}`);
     return (
     <Dropdown 
       options={this.props.data}
