@@ -7,15 +7,13 @@ export const fetchUser = () => async dispatch => {
 };
 
 /* This action will return the list of communities available */
-export const fetchCommunities = () => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.get('api/v1/communities');
-      dispatch({ type: FETCH_COMMUNITIES, payload: res.data });
-    } catch(err) { 
-      dispatch(
-        { type: "ERROR", msg: "unable to fetch data"}
-      );
-    }
+export const fetchCommunities = () => async dispatch => {
+  try {
+    const res = await axios.get('api/v1/communities');
+    dispatch({ type: FETCH_COMMUNITIES, payload: res.data });
+  } catch(err) { 
+    dispatch(
+      { type: "ERROR", msg: "unable to fetch data"}
+    );
   }
 }
