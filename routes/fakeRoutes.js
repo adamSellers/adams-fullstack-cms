@@ -10,6 +10,7 @@ function fakeRoutes(router) {
     requireLogin,
     (req, res) => {
       console.log('the community api got called');
+      setTimeout(
       res.send(
         {
           "communities": [
@@ -280,7 +281,7 @@ function fakeRoutes(router) {
           ],
           "total": 12
         }
-      )
+      ),2000); // pretending to be server lag... 
     }
   );
 
