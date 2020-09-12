@@ -27,8 +27,8 @@ class SelectCommunity extends Component {
   };
 };
 
-const mapStateToProps = (state) => {
-  return { isLoading: state.isLoading, data: state.data, error: state.error }
+const mapStateToProps = ({communities}) => {
+  return { communities };
 };
 
 const mapDispatchToProps = (dispatch) => {
