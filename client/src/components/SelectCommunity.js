@@ -6,13 +6,21 @@ import CommunityDropdown from './CommunityDropdown';
 class SelectCommunity extends Component {
 
   componentDidMount() {
-    this.props.fetchCommunities();
+    this.props.onFetchCommunities();
   }
   render() {
     return (
-      <CommunityDropdown />
+    <div>state: {JSON.stringify(this.props)}</div>
     )
   };
 };
 
-export default connect(null, actions)(SelectCommunity);
+const mapStateToProps = (state) => {
+  return { isLoading: state.isLoading, data: state.data, error: state.error }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { onFetchCommunities: () => dispatch(fetchCommunities())}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectCommunity);

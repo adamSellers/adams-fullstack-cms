@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, GET_COMMUNITIES, GET_CONTENT_LIST } from './types';
+import { FETCH_USER, communities } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/v1/current_user');
@@ -8,6 +8,11 @@ export const fetchUser = () => async dispatch => {
 
 /* This action will return the list of communities available */
 export const fetchCommunities = () => async dispatch => {
-  const res = await axios.get('api/v1/communities');
-  dispatch({ type: GET_COMMUNITIES, payload: res.data });
+  return (dispatch) => {
+    const res = await axios.get('api/v1/communities');
+    dispatch({ type: "communities_returned", payload: res.data })
+    .catch(err => dispatch(
+      {type: "ERROR", msg: "unable to fetch data"}
+    ));
+  }
 };

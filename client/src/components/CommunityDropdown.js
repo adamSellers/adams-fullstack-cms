@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 const dropdownOptions = [];
 
 class CommunityDropdown extends Component {
-  componentDidUpdate() {
+  componentDidMount() {
     let stateArray = this.props.communities['communities'];
     for (let i = 0; i < stateArray.length; i ++ ) {
       if (stateArray[i].status === 'Live') {
