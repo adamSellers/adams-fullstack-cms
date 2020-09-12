@@ -10,9 +10,12 @@ export const fetchUser = () => async dispatch => {
 export const fetchCommunities = () => {
   return async (dispatch) => {
     const res = await axios.get('api/v1/communities');
-    dispatch({ type: "communities_returned", payload: res.data })
-      .catch(err => dispatch(
+    try {
+    dispatch({ type: "communities_returned", payload: res.data });
+    } catch(err) { 
+      dispatch(
         { type: "ERROR", msg: "unable to fetch data"}
-    ));
+      );
+    }
   }
-};
+}
