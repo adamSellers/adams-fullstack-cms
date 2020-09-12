@@ -7,10 +7,10 @@ export const fetchUser = () => async dispatch => {
 };
 
 /* This action will return the list of communities available */
-export const fetchCommunities = () => dispatch => {
+export const fetchCommunities = () => {
   return (dispatch) => {
     axios.get('api/v1/communities')
-      .then(res => console.log(`there's data in the payload: ${JSON.stringify(res.data)}`))
+      .then(res => console.log(`action creator! there's data in the payload: ${JSON.stringify(res.data)}`))
         .then(res => dispatch({ type: "communities_returned", payload: res.data }))
       .catch(err => dispatch(
         { type: "ERROR", msg: "unable to fetch data"}
