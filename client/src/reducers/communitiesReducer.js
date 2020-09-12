@@ -15,13 +15,15 @@ const communtiesReducer = (state = initialState, action) => {
     case "communities_returned":
       // reduce the returned state down to an array of options
       // filter here to limit to active only
-      let activeCommunities = action.payload['communities'].filter(record => {
-        if( record.status === 'Live') {
-          return {
-            key: record.id,
-            value: record.id,
-            text: record.name
+      const activeCommunities = [];
+      action.payload['communities'].forEach( el => {
+        if(el.status === 'Live') {
+          let singleItem = {
+            key: el.id,
+            value: el.id,
+            text: el.name
           }
+          activeCommunities.push(singleItem);
         }
       });
       console.log(`in the reducer, active communities: ${JSON.stringify(activeCommunities)}`);
