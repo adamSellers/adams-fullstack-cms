@@ -10,6 +10,7 @@ class SelectCommunity extends Component {
     this.props.onFetchCommunities();
   }
   render() {
+    console.log(`are there data props?: ${JSON.stringify(this.props.data)}`);
     return (
     <Dropdown 
       options={this.props.data}
