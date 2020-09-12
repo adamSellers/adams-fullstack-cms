@@ -11,7 +11,7 @@ class SelectCommunity extends Component {
 
 
   onDropdownChange(evt) {
-    console.log(`here's the event object: ${JSON.stringify(evt)}`);
+    console.log(`here's the event object: ${evt.target.value}`);
   }
 
   render() {
