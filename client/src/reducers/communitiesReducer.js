@@ -23,7 +23,7 @@ const communtiesReducer = (state = initialState, action) => {
     case "COMMUNITIES":
       return {...state, isLoading: true};
     case "communities_returned":
-      return {...state, data: action.payload};
+      return {...state, data: action.payload, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
     default:
