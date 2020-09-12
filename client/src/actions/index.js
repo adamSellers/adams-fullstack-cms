@@ -10,8 +10,8 @@ export const fetchUser = () => async dispatch => {
 export const fetchCommunities = () => dispatch => {
   return (dispatch) => {
     axios.get('api/v1/communities')
-      .then(console.log(`there's data in the payload: ${JSON.stringify(res.data)}`))
-        .then(dispatch({ type: "communities_returned", payload: res.data }))
+      .then(res => console.log(`there's data in the payload: ${JSON.stringify(res.data)}`))
+        .then(res => dispatch({ type: "communities_returned", payload: res.data }))
       .catch(err => dispatch(
         { type: "ERROR", msg: "unable to fetch data"}
     ));
