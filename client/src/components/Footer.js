@@ -8,7 +8,7 @@ export default class Footer extends Component {
       <Segment inverted>
         <Grid stackable>
           <Grid.Column width="4">
-            <Image src="/footerLogo.png" alt="Salesforce.org Architects"></Image>
+            <Image src="/footerLogo.png" alt="Salesforce.org Architects" verticalAlign="middle"></Image>
           </Grid.Column>
           <Grid.Column width="8" textAlign="center" verticalAlign="middle">
             Proudly brought to you by the Salesforce.org Architect team.

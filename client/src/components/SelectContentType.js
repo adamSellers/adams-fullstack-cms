@@ -18,7 +18,7 @@ export default class SelectContentType extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column stretched>
-              <Dropdown placeholder="Select Content Type fluid" fluid />
+              <Dropdown placeholder="Select Content Type fluid" fluid selection />
             </Grid.Column>
           </Grid.Row>
         </Grid>
