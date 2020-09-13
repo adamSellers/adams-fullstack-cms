@@ -24,7 +24,7 @@ class SelectContentType extends Component {
       return (
         <Grid.Column stretched>
           <Card key={article.key}>
-            <Image src={article.image} />
+            <Image src={this.props.auth.sfInstanceUrl + article.image} />
             <Card.Content>
               <Card.Header>
                 {article.title}
@@ -54,8 +54,8 @@ class SelectContentType extends Component {
   };
 }
 
-const mapStateToProps = ({ content }) => {
-  return { content };
+const mapStateToProps = ({ content, auth }) => {
+  return { content, auth };
 };
 
 const mapDispatchToProps = (dispatch) => {
