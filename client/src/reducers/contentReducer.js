@@ -28,7 +28,7 @@ const contentReducer = (state = initialState, action) => {
           contentList.push(singleItem);
         }
       });
-      return {...state, data: activeCommunities, isLoading: false};
+      return {...state, data: contentList, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
     default:
