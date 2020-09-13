@@ -16,7 +16,7 @@ class SelectContentType extends Component {
           <Dimmer active inverted>
             <Loader size="large">Spinning the wheels</Loader>
           </Dimmer>
-          <Image src="/paragraph.phg" />
+          <Image src="/paragraph.png" />
         </Grid.Column>
       );
     } else {
