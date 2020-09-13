@@ -25,7 +25,7 @@ class SelectContentType extends Component {
         return (
           <Grid.Column stretched>
             <Card key={article.key}>
-              <Image src={`https://adams-scv-demo.my.salesforce.com + ${article.image}`} />
+              <Image src={this.props.auth.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
                   {article.title}
@@ -47,7 +47,6 @@ class SelectContentType extends Component {
       <Segment placeholder>
         <Grid stretched stackable columns="4" textAlign="center" verticalAlign="middle">
           <Grid.Row>
-              {/* <Dropdown placeholder="Select Content Type fluid" fluid selection /> */}
               {this.newsArticles()}
           </Grid.Row>
         </Grid>
@@ -56,10 +55,12 @@ class SelectContentType extends Component {
   };
 }
 
+// the come from the combineReducers export
 const mapStateToProps = ({ content, auth }) => {
   return { content, auth };
 };
 
+// these come from the index.js actions file
 const mapDispatchToProps = (dispatch) => {
   return { 
     onFetchContentType: () => dispatch(fetchContentType())
