@@ -15,7 +15,6 @@ const contentReducer = (state = initialState, action) => {
       // filter here to limit to news articles only
       const contentList = [];
       action.payload['items'].forEach( el => {
-        console.log('looping through content');
         if(el.type === 'news') {
           let singleItem = {
             key: el.managedContentId,
@@ -29,7 +28,6 @@ const contentReducer = (state = initialState, action) => {
           contentList.push(singleItem);
         }
       });
-      console.log(`the list of content about to be returned is: ${JSON.stringify(contentList)}`);
       return {...state, data: contentList, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};

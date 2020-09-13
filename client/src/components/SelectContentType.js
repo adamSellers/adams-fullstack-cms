@@ -19,26 +19,27 @@ class SelectContentType extends Component {
           <Image src="/paragraph.phg" />
         </Grid.Column>
       );
-    } 
-    console.log(`are my auth props here? ${JSON.stringify(this.props.auth)}`);
-    const cards = this.props.content.data.map( article => {
-      return (
-        <Grid.Column stretched>
-          <Card key={article.key}>
-            <Image src={article.image} />
-            <Card.Content>
-              <Card.Header>
-                {article.title}
-              </Card.Header>
-              <Card.Description>
-                {article.excerpt}
-              </Card.Description>
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-      );
-    });
-    return cards;
+    } else {
+      console.log(`are my auth props here? ${JSON.stringify(this.props.auth)}`);
+      const cards = this.props.content.data.map( article => {
+        return (
+          <Grid.Column stretched>
+            <Card key={article.key}>
+              <Image src={`https://adams-scv-demo.my.salesforce.com + ${article.image}`} />
+              <Card.Content>
+                <Card.Header>
+                  {article.title}
+                </Card.Header>
+                <Card.Description>
+                  {article.excerpt}
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+        );
+      });
+      return cards;
+    }
   }
 
   render() {
