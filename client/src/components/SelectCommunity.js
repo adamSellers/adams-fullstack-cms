@@ -11,7 +11,7 @@ class SelectCommunity extends Component {
 
 
   onDropdownChange(event, data) {
-    console.log(`selected value is: ${JSON.stringify(data)}`);
+    console.log(`selected value is: ${data.value}`);
     console.log(`event type is: ${event.type}`);
     console.log(`event target is: ${event.target}`);
     console.log(`current target is: ${event.currentTarget}`);
@@ -36,7 +36,7 @@ const mapStateToProps = ({communities}) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { onFetchCommunities: () => dispatch(fetchCommunities())}
+  return { onFetchCommunities: () => dispatch(fetchCommunities()) }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectCommunity);
