@@ -25,7 +25,7 @@ class SelectCommunity extends Component {
       fluid
       selection
       loading={this.props.communities.isLoading}
-      onChange={ (evnt, data) => this.onDropdownChange(event, data)}
+      onChange={ (event, data) => this.onDropdownChange(event, data)}
     />
     )
   };
