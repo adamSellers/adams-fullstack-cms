@@ -27,7 +27,7 @@ class SelectContentType extends Component {
     // });
     // return cards;
     console.log(`the content props are: ${JSON.stringify(this.props.content)}`);
-    console.log(`what type of object is it: ${typeof(this.content.props)}`);
+    console.log(`what type of object is it: ${typeof(this.props.content)}`);
   }
 
   render() {
