@@ -10,8 +10,11 @@ class SelectCommunity extends Component {
   }
 
 
-  onDropdownChange(data) {
+  onDropdownChange(event, data) {
     console.log(`selected value is: ${JSON.stringify(data)}`);
+    console.log(`event type is: ${event.type}`);
+    console.log(`event target is: ${event.target}`);
+    console.log(`current target is: ${event.currentTarget}`);
   }
 
   render() {
@@ -22,7 +25,7 @@ class SelectCommunity extends Component {
       fluid
       selection
       loading={this.props.communities.isLoading}
-      onChange={ (data) => this.onDropdownChange(data)}
+      onChange={ (evnt, data) => this.onDropdownChange(event, data)}
     />
     )
   };
