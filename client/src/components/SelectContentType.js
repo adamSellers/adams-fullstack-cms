@@ -21,6 +21,7 @@ class SelectContentType extends Component {
       );
     } else {
       console.log(`are my auth props here? ${JSON.stringify(this.props.auth)}`);
+      console.log(`does my image url resolve at all? ${this.props.auth.sfInstanceUrl + article.image}`);
       const cards = this.props.content.data.map( article => {
         return (
           <Grid.Column stretched>
