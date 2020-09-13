@@ -16,7 +16,7 @@ const contentReducer = (state = initialState, action) => {
       const contentList = [];
       action.payload['items'].forEach( el => {
         console.log('looping through content');
-        if(el.type === 'news') {
+        if(el.type === 'flexContent') {
           let singleItem = {
             key: el.managedContentId,
             title: el.contentNodes.title.value,
