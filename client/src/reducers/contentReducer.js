@@ -15,6 +15,7 @@ const contentReducer = (state = initialState, action) => {
       // filter here to limit to active only
       const contentList = [];
       action.payload['items'].forEach( el => {
+        console.log('looping through content');
         if(el.type === 'news') {
           let singleItem = {
             key: el.managedContentId,

@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { fetchContentType } from '../actions';
 
 class SelectContentType extends Component {
+
+  componentDidMount() {
+    this.props.onFetchContentType();
+  }
+  
   render() {
     return(
       <Segment placeholder>
