@@ -10,7 +10,7 @@ class SelectCommunity extends Component {
   }
 
 
-  onDropdownChange(data) {
+  onDropdownChange(event, data) {
     console.log(`selected value is: ${data.value}`);
   }
 
@@ -22,7 +22,7 @@ class SelectCommunity extends Component {
       fluid
       selection
       loading={this.props.communities.isLoading}
-      onChange={ (data) => this.onDropdownChange(data)}
+      onChange={ (event, data) => this.onDropdownChange(event, data)}
     />
     )
   };
