@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Grid, Card, Image } from 'semantic-ui-react';
+import { Segment, Grid, Card, Image, Dimmer, Loader } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchContentType } from '../actions';
 
@@ -10,24 +10,34 @@ class SelectContentType extends Component {
   }
 
   newsArticles() {
-    // const cards = this.props.content.map( article => {
-    //   return (
-    //     <Card key={article.id}>
-    //       <Image src={article.image} />
-    //       <Card.Content>
-    //         <Card.Header>
-    //           {article.title}
-    //         </Card.Header>
-    //         <Card.Description>
-    //           {article.excerpt}
-    //         </Card.Description>
-    //       </Card.Content>
-    //     </Card>
-    //   );
-    // });
-    // return cards;
-    console.log(`the content props are: ${JSON.stringify(this.props.content)}`);
-    console.log(`what type of object is it: ${typeof(this.props.content)}`);
+    if (this.props.content.isLoading) {
+      return (
+        <Grid.Column stretched>
+          <Dimmer active inverted>
+            <Loader size="large">Spinning the wheels</Loader>
+          </Dimmer>
+          <Image src="/paragraph.phg" />
+        </Grid.Column>
+      );
+    } 
+    const cards = this.props.content.data.map( article => {
+      return (
+        <Grid.Column stretched>
+          <Card key={article.key}>
+            <Image src={article.image} />
+            <Card.Content>
+              <Card.Header>
+                {article.title}
+              </Card.Header>
+              <Card.Description>
+                {article.excerpt}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        </Grid.Column>
+      );
+    });
+    return cards;
   }
 
   render() {
@@ -35,10 +45,8 @@ class SelectContentType extends Component {
       <Segment placeholder>
         <Grid stretched stackable columns="4" textAlign="center" verticalAlign="middle">
           <Grid.Row>
-            <Grid.Column stretched>
               {/* <Dropdown placeholder="Select Content Type fluid" fluid selection /> */}
               {this.newsArticles()}
-            </Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
