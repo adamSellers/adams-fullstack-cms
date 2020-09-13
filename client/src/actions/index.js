@@ -19,10 +19,10 @@ export const fetchCommunities = () => async dispatch => {
 }
 
 /* This action will return the list of content for news */
-export const fetchCommunities = () => async dispatch => {
+export const fetchContentType = ( networkId ) => async dispatch => {
   try {
-    const res = await axios.get('api/v1/communities');
-    dispatch({ type: FETCH_COMMUNITIES, payload: res.data });
+    const res = await axios.get('api/v1/getContent');
+    dispatch({ type: FETCH_CONTENT, payload: res.data });
   } catch(err) { 
     dispatch(
       { type: "ERROR", msg: "unable to fetch data"}

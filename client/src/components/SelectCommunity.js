@@ -11,7 +11,7 @@ class SelectCommunity extends Component {
 
 
   onDropdownChange(event, data) {
-    console.log(`selected value is: ${data.value}`);
+    console.log(`selected value is: ${data['value']}`);
   }
 
   render() {
