@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Segment, Grid, Header, Icon, Dropdown } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { fetchContentType } from '../actions';
 
-export default class SelectContentType extends Component {
+class SelectContentType extends Component {
   render() {
     return(
       <Segment placeholder>
@@ -18,7 +20,8 @@ export default class SelectContentType extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column stretched>
-              <Dropdown placeholder="Select Content Type fluid" fluid selection />
+              {/* <Dropdown placeholder="Select Content Type fluid" fluid selection /> */}
+              {JSON.stringify(this.props.content)}
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -26,3 +29,12 @@ export default class SelectContentType extends Component {
     )
   };
 }
+
+const mapStateToProps = ({ content }) => {
+  return { content };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { onFetchContentType: () => dispatch(fetchContentType()) }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SelectContentType);
