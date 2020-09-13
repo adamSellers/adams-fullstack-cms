@@ -10,22 +10,24 @@ class SelectContentType extends Component {
   }
 
   newsArticles() {
-    const cards = this.props.content.map( article => {
-      return (
-        <Card key={article.id}>
-          <Image src={article.image} />
-          <Card.Content>
-            <Card.Header>
-              {article.title}
-            </Card.Header>
-            <Card.Description>
-              {article.excerpt}
-            </Card.Description>
-          </Card.Content>
-        </Card>
-      );
-    });
-    return cards;
+    // const cards = this.props.content.map( article => {
+    //   return (
+    //     <Card key={article.id}>
+    //       <Image src={article.image} />
+    //       <Card.Content>
+    //         <Card.Header>
+    //           {article.title}
+    //         </Card.Header>
+    //         <Card.Description>
+    //           {article.excerpt}
+    //         </Card.Description>
+    //       </Card.Content>
+    //     </Card>
+    //   );
+    // });
+    // return cards;
+    console.log(`the content props are: ${JSON.stringify(this.props.content)}`);
+    console.log(`what type of object is it: ${typeof(this.content.props)}`);
   }
 
   render() {
