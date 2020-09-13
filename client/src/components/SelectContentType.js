@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Segment, Grid, Card, Image, Dimmer, Loader } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { fetchContentType } from '../actions';
+import { fetchContentType, fetchUser } from '../actions';
 
 class SelectContentType extends Component {
 
   componentDidMount() {
     this.props.onFetchContentType();
+    this.props.onFetchUser();
   }
 
   newsArticles() {
@@ -60,6 +61,9 @@ const mapStateToProps = ({ content, auth }) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { onFetchContentType: () => dispatch(fetchContentType()) }
+  return { 
+    onFetchContentType: () => dispatch(fetchContentType()),
+    onFetchUser: () => dispatch(fetchUser()) 
+  }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SelectContentType);
