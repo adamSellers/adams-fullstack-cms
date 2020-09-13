@@ -10,7 +10,7 @@ class SelectContentType extends Component {
   }
 
   newsArticles() {
-    if (this.props.content.isLoading) {
+    if (this.props.content.isLoading || this.props.auth === null) {
       return (
         <Grid.Column stretched>
           <Dimmer active inverted>
