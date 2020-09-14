@@ -23,5 +23,10 @@
     "pug": "2.0.0-beta11",
     "redis": "^3.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "csp-html-webpack-plugin": "^4.0.0",
+    "customize-cra": "^1.0.0",
+    "html-webpack-plugin": "^4.4.1",
+    "react-app-rewired": "^2.1.6"
+  }
 }
