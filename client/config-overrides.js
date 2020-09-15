@@ -6,9 +6,9 @@ const cspConfigPolicy = {
     'base-uri': "'self'",
     'object-src': "'none'",
     'script-src': ["'self'"],
-    'style-src': ["'self'", "'https://fonts.googleapis.com/'", "data:"],
-    'font-src': ["'self'", "'https://fonts.gstatic.com/'", "data:"],
-    'img-src': ["'self'", "'https://adams-scv-demo--c.documentforce.com/'"]
+    'style-src': ["'self'", "https://fonts.googleapis.com/", "data:"],
+    'font-src': ["'self'", "https://fonts.gstatic.com/", "data:"],
+    'img-src': ["'self'"]
 };
 
 function addCspHtmlWebpackPlugin(config) {
