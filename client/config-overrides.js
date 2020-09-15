@@ -7,7 +7,7 @@ const cspConfigPolicy = {
     'object-src': "'none'",
     'script-src': ["'self'"],
     'style-src': ["'self'", "https://fonts.googleapis.com/", "data:"],
-    'font-src': ["'self'", "data:"],
+    'font-src': ["'self'", "https://fonts.gstatic.com/", "data:"],
     'img-src': ["'self'", "data:"]
 };
 
