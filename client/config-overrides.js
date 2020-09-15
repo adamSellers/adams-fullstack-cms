@@ -6,7 +6,7 @@ const cspConfigPolicy = {
     'base-uri': "'self'",
     'object-src': "'none'",
     'script-src': ["'self'"],
-    'style-src': ["'self'", "data:"],
+    'style-src': ["'self'", "https://fonts.googleapis.com/", "data:"],
     'font-src': ["'self'", "data:"],
     'img-src': ["'self'", "data:"]
 };
