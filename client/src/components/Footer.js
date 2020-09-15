@@ -8,9 +8,12 @@ export default class Footer extends Component {
       <Segment inverted>
         <Grid stackable>
           <Grid.Column width="4">
-            <Image src="/footerLogo.png" alt="Salesforce.org Architects"></Image>
+            <Image src="/footerLogo.png" alt="Salesforce.org Architects" verticalAlign="middle"></Image>
           </Grid.Column>
-          <Grid.Column width="8" textAlign="center">
+          <Grid.Column width="8" textAlign="center" verticalAlign="middle">
+            Proudly brought to you by the Salesforce.org Architect team.
+          </Grid.Column>
+          <Grid.Column width="4" textAlign="center">
             <Menu fluid inverted vertical>
               <Menu.Item>
                 <a href="https://www.salesforce.org/nonprofit/nonprofit-success-pack/">NPSP</a>
@@ -25,9 +28,6 @@ export default class Footer extends Component {
                 <a href="https://www.salesforce.org/power-of-us/">Power of Us</a>
               </Menu.Item>
             </Menu>
-          </Grid.Column>
-          <Grid.Column width="4" textAlign="center" verticalAlign="middle">
-            Proudly brought to you by the Salesforce.org Architect team.
           </Grid.Column>
         </Grid>
       </Segment>

@@ -17,8 +17,8 @@ function salesforceAuthRoutes(router) {
     '/auth/callback', 
     passport.authenticate('salesforce'),
     (req, res) => {
-      // auth successful, redirect to root
-      res.redirect('/');
+      // auth successful, redirect to logged in page
+      res.redirect('/content-type');
     });
 
     /* logout route */

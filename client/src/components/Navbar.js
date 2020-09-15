@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Segment, Container, Dropdown, Grid, Button, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 import LoginButtonNav from './LoginButtonNav';
 import LogoutButtonNav from './LogoutButtonNav';
+import SelectCommunity from './SelectCommunity';
 
 class Navbar extends Component {
   state = { 
-    activeItem: 'home',
-    dropDownOptions: [
-      { key: 'news', value: 'news', text: 'News'},
-      { key: 'img', value: 'img', text: 'Image'},
-      { key: 'cust', value: 'cust', text: 'Custom'}
-    ] 
+    activeItem: 'home'
   }
 
   handleItemClick = (e, { name }) => {
@@ -33,24 +29,24 @@ class Navbar extends Component {
         );
       default:
         return (
-          <Dropdown 
-            placeholder="Select Content Type" 
-            fluid 
-            selection 
-            options={this.state.dropDownOptions}
-          />
+          <LogoutButtonNav />
         );
     }
   }
 
-  // function to determine if we show the logout button
-  showLogout() {
+  showCommunityDropdown() {
     if (this.props.auth) {
       return (
-        <Menu.Item name='logout' position="right" as='a' href='/auth/logout'>
-          <LogoutButtonNav />
-        </Menu.Item>
+        <SelectCommunity></SelectCommunity>
       )
+    };
+  }
+
+  onHomeClick() {
+    if (this.props.auth) {
+      return '/content-type';
+    } else {
+      return '/';
     }
   }
   
@@ -60,7 +56,7 @@ class Navbar extends Component {
     return(
       <Segment color="teal">
         <Grid>
-          <Grid.Column width="10">
+          <Grid.Column width="8">
             <Container>
               <Menu stackable borderless>
                 <Menu.Item
@@ -68,7 +64,7 @@ class Navbar extends Component {
                   active={activeItem === 'home'}
                   onClick={this.handleItemClick}
                   as={Link}
-                  to='/'
+                  to={this.onHomeClick()}
                 ></Menu.Item>
                 <Menu.Item
                   name='about'
@@ -84,11 +80,13 @@ class Navbar extends Component {
                   as={Link}
                   to='/profile'
                 ></Menu.Item>
-                {this.showLogout()}
               </Menu>
             </Container>
           </Grid.Column>
-          <Grid.Column width="6" verticalAlign="middle">
+          <Grid.Column width="5" verticalAlign="middle">
+            {this.showCommunityDropdown()}
+          </Grid.Column>
+          <Grid.Column width="3" verticalAlign="middle">
             <Container textAlign="right">
               {this.isUserLoggedIn()}
             </Container>
