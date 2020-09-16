@@ -18,7 +18,7 @@ module.exports = {
     ],
     "style-src": [
       "'self'",
-      "data:"
+      "https://fonts.googleapis.com"
     ]
   }
 }
