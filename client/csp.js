@@ -8,9 +8,7 @@ module.exports = {
       "https://login.salesforce.com"
     ],
     "img-src": [
-      "'self'",
-      "https://*.salesforce.com",
-      "https://*.documentforce.com"
+      "*"
     ],
     "font-src": [
       "'self'",
