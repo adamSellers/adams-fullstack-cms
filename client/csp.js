@@ -9,7 +9,8 @@ module.exports = {
     ],
     "img-src": [
       "'self'",
-      "https:"
+      "https://*.salesforce.com",
+      "https://*.documentforce.com"
     ],
     "font-src": [
       "'self'",
