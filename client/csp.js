@@ -13,7 +13,8 @@ module.exports = {
     ],
     "font-src": [
       "'self'",
-      "https://fonts.gstatic.com"
+      "https://fonts.gstatic.com",
+      "data:"
     ],
     "style-src": [
       "'self'",
