@@ -21,6 +21,7 @@
     "passport": "^0.4.1",
     "passport-salesforce": "0.0.2",
     "pug": "2.0.0-beta11",
+    "react-csp": "^1.1.0",
     "redis": "^3.0.2"
   },
   "devDependencies": {}
