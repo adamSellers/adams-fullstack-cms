@@ -1,5 +1,6 @@
 const passport = require('passport');
 const requireLogin = require('../middlewares/requireLogin');
+const axios = require('axios');
 
 function salesforceAuthRoutes(router) {
   /* Login route */
@@ -26,9 +27,17 @@ function salesforceAuthRoutes(router) {
       '/auth/logout',
       requireLogin,
       (req, res) => {
-        // add a further call to SF to logout of SF at some point
-        req.session.destroy();
-        res.redirect('/');
+        // revoke SF Access token via GET request
+        axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAcessToken}`)
+        .then(result => {
+          if(result.status === 200) {
+            req.session.destroy();
+            res.redirect('/');
+          }
+        })
+        .catch( err => {
+          console.log(`eww something bad happened: ${err.message}`);
+        });        
       }
     );
 
