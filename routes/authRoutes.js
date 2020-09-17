@@ -30,6 +30,7 @@ function salesforceAuthRoutes(router) {
         // revoke SF Access token via GET request
         axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAcessToken}`)
         .then(result => {
+          console.log(`axios result: ${JSON.stringify(result)}`);
           if(result.status === 200) {
             req.session.destroy();
             res.redirect('/');
@@ -37,6 +38,7 @@ function salesforceAuthRoutes(router) {
         })
         .catch( err => {
           console.log(`eww something bad happened: ${err.message}`);
+          res.redirect('/');
         });        
       }
     );
