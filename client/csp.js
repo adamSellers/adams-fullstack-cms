@@ -9,7 +9,7 @@ module.exports = {
     ],
     "img-src": [
       "'self'",
-      "https://adams-scv-demo.my.salesforce.com/"
+      "https:"
     ],
     "font-src": [
       "'self'",
