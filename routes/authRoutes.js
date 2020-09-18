@@ -28,22 +28,24 @@ function salesforceAuthRoutes(router) {
       requireLogin,
       (req, res) => {
         // revoke SF Access token via GET request
-        console.log(`what's in the req object? : ${JSON.stringify(req.user['sfAccessToken'])}`);
-        console.log(`what's in the req object? : ${JSON.stringify(req.user.sfAccessToken)}`);
-        axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAccessToken}`, {
-          'Authorization' : `Bearer ${req.user.sfAccessToken}`
-        })
-        .then(result => {
-          console.log(`axios result: ${JSON.stringify(result)}`);
-          if(result.status === 200) {
-            req.session.destroy();
-            res.redirect('/');
-          }
-        })
-        .catch( err => {
-          console.log(`eww something bad happened: ${err.message}`);
-          res.redirect('/');
-        });        
+        // console.log(`what's in the req object? : ${JSON.stringify(req.user['sfAccessToken'])}`);
+        // console.log(`what's in the req object? : ${JSON.stringify(req.user.sfAccessToken)}`);
+        // axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAccessToken}`, {
+        //   'Authorization' : `Bearer ${req.user.sfAccessToken}`
+        // })
+        // .then(result => {
+        //   console.log(`axios result: ${JSON.stringify(result)}`);
+        //   if(result.status === 200) {
+        //     req.session.destroy();
+        //     res.redirect('/');
+        //   }
+        // })
+        // .catch( err => {
+        //   console.log(`eww something bad happened: ${err.message}`);
+        //   res.redirect('/');
+        // });    
+        req.session.destroy();
+        res.redirect('/');   
       }
     );
 
