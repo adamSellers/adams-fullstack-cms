@@ -3,6 +3,9 @@ import { Segment, Container, Card, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 class Profile extends Component {
+  componentDidMount() {
+    this.props.onFetchUser();
+  }
 
   render() {
     return (
@@ -35,4 +38,8 @@ const mapStateToProps = ({ auth }) => {
   return { auth };
 };
 
-export default connect(mapStateToProps)(Profile);
+const mapDispatchToProps = (dispatch) => {
+  return onFetchUser = () => dispatch(fetchUser());
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
