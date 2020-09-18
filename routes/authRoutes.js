@@ -29,8 +29,9 @@ function salesforceAuthRoutes(router) {
       (req, res) => {
         // revoke SF Access token via GET request
         console.log(`what's in the req object? : ${JSON.stringify(req.user['sfAccessToken'])}`);
-        axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAcessToken}`, {
-          'Authorization' : `Bearer ${req.user.sfAcessToken}`
+        console.log(`what's in the req object? : ${JSON.stringify(req.user.sfAccessToken)}`);
+        axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAccessToken}`, {
+          'Authorization' : `Bearer ${req.user.sfAccessToken}`
         })
         .then(result => {
           console.log(`axios result: ${JSON.stringify(result)}`);
