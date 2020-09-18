@@ -29,8 +29,8 @@ function salesforceAuthRoutes(router) {
       (req, res) => {
         // call the url to logout from Salesforce
         axios.get(`${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`)
-        .then(res => {
-          console.log(`was there any result from the axios call? ${JSON.stringify(res)}`);
+        .then(result => {
+          console.log(`was there any result from the axios call? ${JSON.stringify(result)}`);
           req.session.destroy();
           res.redirect('/');  
         }).catch( err => {
