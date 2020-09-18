@@ -28,6 +28,7 @@ function salesforceAuthRoutes(router) {
       requireLogin,
       (req, res) => {
         // revoke SF Access token via GET request
+        console.log(`do we have an access token? :: ${req.user.sfAcessToken}`);
         axios.get(`https://login.salesforce.com/services/oauth2/revoke?token=${req.user.sfAcessToken}`)
         .then(result => {
           console.log(`axios result: ${JSON.stringify(result)}`);
