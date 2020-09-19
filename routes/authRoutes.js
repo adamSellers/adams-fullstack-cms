@@ -35,6 +35,8 @@ function salesforceAuthRoutes(router) {
           res.redirect('/');  
         }).catch( err => {
           console.log(`we caught an error: ${JSON.stringify(err)}`);
+          req.session.destroy();
+          res.redirect('/');
         }); 
       }
     );
