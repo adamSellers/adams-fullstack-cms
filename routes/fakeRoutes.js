@@ -10,7 +10,6 @@ function fakeRoutes(router) {
   router.get(
     '/api/v1/communities',
     requireLogin,
-    serverLag,
     async (req, res) => {
       console.log('the community api got called');
       // get the response back from Salesforce
