@@ -17,9 +17,12 @@ function fakeRoutes(router) {
         'Authorization': `Bearer ${req.user.sfAccessToken}`,
         'Content-Type': 'application/json'
       });
+      try {
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
-      } else {
+        res.status(200).send(communitiesResponse['communities']);
+        } 
+      } catch {
         console.log(`communities response wasn't 200 status: ${JSON.stringify(communitiesResponse)}`);
       }
     }
