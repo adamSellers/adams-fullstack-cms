@@ -4,15 +4,17 @@ import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // stuff i wrote
 import App from './components/App';
 import reducers from './reducers';
 
 // create the redux store that is used in the app
-const store = createStore( reducers, {}, applyMiddleware(reduxThunk),
-/* preloadedState, */
-window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore( reducers, {}, composeWithDevTools(
+  applyMiddleware(reduxThunk)
+  )
+);
 
 ReactDOM.render(
   <Provider store={store}> <App /> </Provider>,
