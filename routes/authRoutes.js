@@ -27,6 +27,7 @@ function salesforceAuthRoutes(router) {
       '/auth/logout',
       requireLogin,
       (req, res) => {
+        console.log(`about to call this url: ${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`)
         // call the url to logout from Salesforce
         axios.get(`${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`)
         .then(result => {
