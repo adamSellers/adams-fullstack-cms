@@ -29,7 +29,9 @@ function salesforceAuthRoutes(router) {
       (req, res) => {
         console.log(`about to call this url: ${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`)
         // call the url to logout from Salesforce
-        axios.get(`${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`)
+        axios.get(`${req.user.sfInstanceUrl}/services/oauth2/revoke?token=${req.user.sfAccessToken}`,{
+          'Authorization': 'Bearer ' + req.user.sfAccessToken
+        })
         .then(result => {
           console.log(`was there any result from the axios call? ${JSON.stringify(result)}`);
           req.session.destroy();
