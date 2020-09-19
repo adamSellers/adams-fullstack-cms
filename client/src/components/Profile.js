@@ -40,7 +40,7 @@ const mapStateToProps = ({ auth }) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { onFetchUser = () => dispatch(fetchUser()) };
+  return { onFetchUser : () => dispatch(fetchUser()) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
