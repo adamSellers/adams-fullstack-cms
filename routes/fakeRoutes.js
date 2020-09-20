@@ -11,7 +11,7 @@ function fakeRoutes(router) {
     '/api/v1/communities',
     requireLogin,
     async (req, res) => {
-      console.log('the community api got called');
+      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       // get the response back from Salesforce
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
         'Authorization': `Bearer ${req.user.sfAccessToken}`,
