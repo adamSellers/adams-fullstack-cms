@@ -24,7 +24,8 @@ redisClient.on('error', console.log);
 require('./models/User');
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 
 // require passport service for SF Auth
