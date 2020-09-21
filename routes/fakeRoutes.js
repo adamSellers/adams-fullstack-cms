@@ -10,7 +10,7 @@ function fakeRoutes(router) {
   router.get(
     '/api/v1/communities',
     requireLogin,
-    async (req, res) => {
+    async (req, res, next) => {
       try {
       console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
