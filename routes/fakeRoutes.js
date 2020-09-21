@@ -13,11 +13,11 @@ function fakeRoutes(router) {
     async (req, res) => {
       console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       // get the response back from Salesforce
+      try {
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
         'Authorization': `Bearer ${req.user.sfAccessToken}`,
         'Content-Type': 'application/json'
       });
-      try {
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
         res.status(200).send(communitiesResponse['communities']);
