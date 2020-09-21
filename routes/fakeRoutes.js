@@ -12,9 +12,11 @@ function fakeRoutes(router) {
     requireLogin,
     async (req, res, next) => {
       try {
-      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
+      console.log(`going to call ${req.user.sfInstanceUrl}/se(rvices/data/v49.0/connect/communities`);
+      console.log(`actual bearer token: ${req.user.sfAccessToken}`);
+      console.log(`encoded bearer token: ${encodeURIComponen(req.user.sfAccessToken)}`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
-        'Authorization': `Bearer ${req.user.sfAccessToken}`
+        'Authorization': `Bearer ${encodeURIComponent(req.user.sfAccessToken)}`
       });
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
