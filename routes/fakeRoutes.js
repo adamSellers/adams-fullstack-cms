@@ -14,8 +14,7 @@ function fakeRoutes(router) {
       try {
       console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
-        'Authorization': `Bearer ${req.user.sfAccessToken}`,
-        'Content-Type': 'application/json'
+        'Authorization': `Bearer ${req.user.sfAccessToken}`
       });
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
