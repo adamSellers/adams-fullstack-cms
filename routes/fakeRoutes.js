@@ -16,7 +16,7 @@ function fakeRoutes(router) {
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);
       console.log(`encoded bearer token: ${encodeURIComponent(req.user.sfAccessToken)}`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
-        'Authorization': `Bearer ${encodeURIComponent(`00D2w00000ACazt\!AQIAQKqAD0FVYmn0Cre1_ze6JLRKIdadyT4q4q5AwSuqImXPsmydaHKqdusIc2oYOzPjur3XrZNruikTBFRfXNcrNL2MSJyt`)}`
+        'Authorization': `Bearer ${`00D2w00000ACazt\!AQIAQKqAD0FVYmn0Cre1_ze6JLRKIdadyT4q4q5AwSuqImXPsmydaHKqdusIc2oYOzPjur3XrZNruikTBFRfXNcrNL2MSJyt`}`
       });
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
