@@ -14,9 +14,10 @@ function fakeRoutes(router) {
       try {
       console.log(`going to call ${req.user.sfInstanceUrl}/se(rvices/data/v49.0/connect/communities`);
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);
-      console.log(`encoded bearer token: ${encodeURIComponent(req.user.sfAccessToken)}`);
+      let escapedBearer = req.user.sfAccessToken.replace(/!/g, "&excl;");
+      console.log(`replaced bearer token: ${escapedBearer}`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
-        'Authorization': `Bearer ${`00D2w00000ACazt\!AQIAQKqAD0FVYmn0Cre1_ze6JLRKIdadyT4q4q5AwSuqImXPsmydaHKqdusIc2oYOzPjur3XrZNruikTBFRfXNcrNL2MSJyt`}`
+        'Authorization': `Bearer ${escapedBearer}`
       });
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
