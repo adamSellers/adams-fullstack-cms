@@ -11,9 +11,8 @@ function fakeRoutes(router) {
     '/api/v1/communities',
     requireLogin,
     async (req, res) => {
-      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
-      // get the response back from Salesforce
       try {
+      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
         'Authorization': `Bearer ${req.user.sfAccessToken}`,
         'Content-Type': 'application/json'
@@ -22,8 +21,8 @@ function fakeRoutes(router) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse)}`);
         res.status(200).send(communitiesResponse['communities']);
         } 
-      } catch {
-        console.log(`communities response wasn't 200 status: ${JSON.stringify(communitiesResponse)}`);
+      } catch (error) {
+        console.log(error);
       }
     }
   );
