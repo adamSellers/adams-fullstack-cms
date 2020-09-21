@@ -14,7 +14,7 @@ function fakeRoutes(router) {
       try {
       console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);
-      let escapedBearer = req.user.sfAccessToken.replace(/!/g, "\!");
+      let escapedBearer = req.user.sfAccessToken.replace(/!/g, "\\!");
       console.log(`replaced bearer token: ${escapedBearer}`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
         'Authorization': `Bearer ${escapedBearer}`
