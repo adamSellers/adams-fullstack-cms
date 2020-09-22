@@ -21,6 +21,10 @@
     "SFLOGINURL": {
       "description": "The login endpoint for Salesforce, can be swapped out with a community login string if required",
       "value": "https://login.salesforce.com"
+    },
+    "MONGOATLAS_URI": {
+      "description": "The connection string for your mongo atlas DB",
+      "value": "please enter your mongo atlas connection string"
     }
   },
   "addons": [
