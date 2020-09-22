@@ -33,9 +33,9 @@ passport.use(
         clientSecret: clientSecret,
         callbackURL: callbackUrl,
         proxy: true,
-        authorizationURL: process.env.SFCOMMUNITYURL + '/services/oauth2/authorize',
-        tokenURL: process.env.SFCOMMUNITYURL + '/services/oauth2/token',
-        profileURL: process.env.SFCOMMUNITYURL + '/services/oauth2/userinfo'
+        authorizationURL: process.env.SFLOGINURL + '/services/oauth2/authorize',
+        tokenURL: process.env.SFLOGINURL + '/services/oauth2/token',
+        profileURL: process.env.SFLOGINURL + '/services/oauth2/userinfo'
     }, async (accessToken, refreshToken, profile, done) => {
         // test if user exists, update access token if it does
         

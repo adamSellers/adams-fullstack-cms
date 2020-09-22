@@ -30,9 +30,6 @@
   "addons": [
     {
       "plan": "heroku-redis"
-    },
-    {
-      "plan": "ormongo:2-wt"
     }
   ]
 }
