@@ -22,7 +22,7 @@ redisClient.on('error', console.log);
 
 // setup connection to mongodb
 require('./models/User');
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.ORMONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

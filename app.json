@@ -1,0 +1,34 @@
+{
+  "name": "Salesforce CMS Showcase",
+  "description": "A front end for hosting content from Salesforce CMS",
+  "repository": "https://github.com/adamSellers/adams-fullstack-cms",
+  "env": {
+    "APPURL": {
+      "description": "The URL where this app is hosted, used in the callback resolution"
+    },
+    "CLIENTID": {
+      "description": "The Salesforce connected app client ID",
+      "value": "Please enter a value"
+    },
+    "CLIENTSECRET": {
+      "description": "The Salesforce connected app client secret",
+      "value": "Please enter a value"
+    },
+    "REDISSECRET": {
+      "description": "A super secret redis key",
+      "generator": "secret"
+    },
+    "SFLOGINURL": {
+      "description": "The login endpoint for Salesforce, can be swapped out with a community login string if required",
+      "value": "https://login.salesforce.com"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-redis"
+    },
+    {
+      "plan": "ormongo:2-wt"
+    }
+  ]
+}
