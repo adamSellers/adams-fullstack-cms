@@ -13,6 +13,17 @@ This app is a showcase of the Salesforce CMS running in headless mode. The Sales
 
 This application is built to be deployed on Heroku, it uses Salesforce as the IDP so there are some configs you need to install and run.
 
+### Technologies Used
+
+This app was built to be primarily run in the Salesforce stack. This includes:
+
+- Salesforce Identity: the app uses a core SF org to provide authentication. Be sure to create your connected app to run (see below)
+- Heroku: The app is designed to be built and run on Heroku, click the Heroku button below to get started!
+- Redis: Session store is done in Heroku Redis
+- Mongo DB: The relational DB bits, which is only storing user information at present, is done through Mongo DB. As of Nov 2020, mLab has removed their Heroku addon (boo!) but you can still create a free tier at Mongo Atlas. This is recommended to keep the app free to use as Object Rocket (the other Mongo addon in Heroku) doesn't have a free tier.
+- React / Redux: This is a react front end with Redux for the state store. Probably doesn't _need_ Redux specifically, but the point of this building this was for me to learn, so Redux is in.
+- Express: The backend is provided by Express.
+
 ### Environment Variables
 
 The following environment variables are needed:
