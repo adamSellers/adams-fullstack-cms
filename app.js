@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const helmet = require('helmet');
+//const helmet = require('helmet');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -35,7 +35,7 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 // always wear a helmet
-app.use(helmet());
+// app.use(helmet());
 
 // configure session store in Redis
 app.use(
