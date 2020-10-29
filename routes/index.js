@@ -6,7 +6,7 @@ const content = require('./contentRoutes');
 /* Salesforce authroutes */
 authRoutes.salesforceAuthRoutes(router);
 
-/* Bringing in the fake routes */
+/* Bringing in the content routes */
 content.contentRoutes(router);
 
 

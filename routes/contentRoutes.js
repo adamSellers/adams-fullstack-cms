@@ -12,7 +12,7 @@ function contentRoutes(router) {
     requireLogin,
     async (req, res) => {
       try {
-      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
+      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v${process.env.API_VERSION}/connect/communities`);
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);
       const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
 					headers: {
