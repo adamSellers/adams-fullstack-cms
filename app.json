@@ -25,6 +25,10 @@
     "MONGOATLAS_URI": {
       "description": "The connection string for your mongo atlas DB",
       "value": "please enter your mongo atlas connection string"
+    },
+    "API_VERSION": {
+      "description": "The Salesforce API version required (min v49)",
+      "value": "49.0"
     }
   },
   "addons": [

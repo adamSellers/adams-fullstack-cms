@@ -8,10 +8,6 @@ class Profile extends Component {
     this.props.onFetchUser();
   }
 
-  componentDidUpdate() {
-    this.props.onFetchUser();
-  }
-
   render() {
     return (
       <Segment>
