@@ -13,7 +13,7 @@ export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_USER:
       return {...state, data:action.payload, isLoading: false};
-    case ERROR:
+    case "ERROR":
       return {...state, error: action.msg};
     default:
       return state; // the default state will be null
