@@ -21,7 +21,7 @@ function fakeRoutes(router) {
       });
       if (communitiesResponse.status === 200) {
         console.log(`communities response is: ${JSON.stringify(communitiesResponse.data)}`);
-        res.status(200).send(communitiesResponse.data['communities']);
+        res.status(200).send(communitiesResponse.data);
         } 
       } catch (error) {
         console.log(error);
