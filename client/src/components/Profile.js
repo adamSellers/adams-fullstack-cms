@@ -11,9 +11,8 @@ class Profile extends Component {
   render() {
     return (
       <Segment placeholder>
-        <Container text verticalAlign="middle" stretched>
           <Grid columns={2} divided>
-            <Grid.Row>
+            <Grid.Row verticalAlign="middle">
               <Grid.Column width={8}>
                 <Container>
                   <Card>
@@ -31,7 +30,6 @@ class Profile extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </Container>
       </Segment>
     );
   };
