@@ -46,6 +46,7 @@ function contentRoutes(router) {
             }
           });
           if (contentResponse.status === 200) {
+            console.log(`we have content for ${req.params.networkId}! Content returned: ${JSON.stringify(contentResponse.data)}`);
             res.status(200).send(contentResponse.data);
           }
         } catch (error) {
