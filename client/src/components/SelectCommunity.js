@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
 import { fetchCommunities, fetchContentType } from '../actions';
-import _ from 'lodash';
 
 class SelectCommunity extends Component {
 
   componentDidMount() {
-    if (!_.isEmpty(this.props.auth.data)) {
     this.props.onFetchCommunities();
-    }
   }
 
 
   onDropdownChange(event, data) {
     console.log(`selected value is: ${data['value']}`);
+    // fire the action that will get the content for a particular community id
     this.props.onFetchContentType(data['value']);
   }
 
@@ -25,15 +23,15 @@ class SelectCommunity extends Component {
       placeholder="Select a community"
       fluid
       selection
-      loading={this.props.communities.isLoading  || false }
+      loading={this.props.communities.isLoading}
       onChange={ (event, data) => this.onDropdownChange(event, data)}
     />
     )
   };
 };
 
-const mapStateToProps = ({communities, auth}) => {
-  return { communities, auth };
+const mapStateToProps = ({communities}) => {
+  return { communities };
 };
 
 const mapDispatchToProps = (dispatch) => {
