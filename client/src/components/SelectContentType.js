@@ -24,7 +24,7 @@ class SelectContentType extends Component {
         return (
           <Grid.Column stretched>
             <Card key={article.key}>
-              <Image src={this.props.auth.sfInstanceUrl + article.image} />
+              <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
                   {article.title}
