@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Segment, Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 
 import LoginButtonNav from './LoginButtonNav';
 import LogoutButtonNav from './LogoutButtonNav';
@@ -20,17 +21,26 @@ class Navbar extends Component {
 
   // function to set content in navbar if logged in
   isUserLoggedIn() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-            <LoginButtonNav />
-        );
-      default:
-        return (
-          <LogoutButtonNav />
-        );
+    // switch (this.props.auth) {
+    //   case null:
+    //     return;
+    //   case false:
+    //     return (
+    //         <LoginButtonNav />
+    //     );
+    //   default:
+    //     return (
+    //       <LogoutButtonNav />
+    //     );
+    // }
+    if(_.isEmpty(this.props.auth.data)) {
+      return (
+        <LoginButtonNav />
+      );
+    } else {
+      return (
+        <LogoutButtonNav />
+      )
     }
   }
 
