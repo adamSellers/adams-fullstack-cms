@@ -10,6 +10,7 @@ class Profile extends Component {
 
   render() {
     return (
+      <Container>
         <Grid columns={2} divided>
           <Grid.Row verticalAlign="middle">
             <Grid.Column width={8}>
@@ -29,6 +30,7 @@ class Profile extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+      </Container>
     );
   };
 }
