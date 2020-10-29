@@ -11,7 +11,7 @@ class Profile extends Component {
   render() {
     return (
       <Segment>
-        <Grid columns={2} divided>
+        <Grid columns={2} divided stretched>
           <Grid.Row verticalAlign="middle">
             <Grid.Column width={8} textAlign="center">
               <Container>
