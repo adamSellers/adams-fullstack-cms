@@ -10,10 +10,10 @@ class Profile extends Component {
 
   render() {
     return (
-      <Container>
+      <Segment>
         <Grid columns={2} divided>
           <Grid.Row verticalAlign="middle">
-            <Grid.Column width={8}>
+            <Grid.Column width={8} textAlign="center">
               <Container>
                 <Card>
                   <Image src={this.props.auth.sfProfilePic} wrapped ui={false} />
@@ -30,7 +30,7 @@ class Profile extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>
+      </Segment>
     );
   };
 }
