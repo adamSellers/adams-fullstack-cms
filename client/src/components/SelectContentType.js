@@ -20,9 +20,7 @@ class SelectContentType extends Component {
         </Grid.Column>
       );
     } else {
-      console.log(`are my auth props here? ${JSON.stringify(this.props.auth)}`);
       const cards = this.props.content.data.map( article => {
-        console.log(`does my image url resolve at all? ${this.props.auth.sfInstanceUrl + article.image}`);
         return (
           <Grid.Column stretched>
             <Card key={article.key}>
