@@ -2,8 +2,14 @@ import axios from 'axios';
 import { FETCH_USER, FETCH_COMMUNITIES, FETCH_CONTENT } from './types';
 
 export const fetchUser = () => async dispatch => {
-  const res = await axios.get('/api/v1/current_user');
-  dispatch({ type: FETCH_USER, payload: res.data });
+  try {
+    const res = await axios.get('/api/v1/current_user');
+    dispatch({ type: FETCH_USER, payload: res.data });
+  } catch(err) {
+    dispatch(
+      { type: "ERROR", msg: "unable to fetch user info"}
+    );
+  }
 };
 
 /* This action will return the list of communities available */
