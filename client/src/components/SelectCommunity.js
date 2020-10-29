@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
 import { fetchCommunities, fetchContentType } from '../actions';
+import _ from 'lodash';
 
 class SelectCommunity extends Component {
 
   componentDidMount() {
+    if (!_.isEmpty(this.props.auth.data)) {
     this.props.onFetchCommunities();
+    }
   }
 
 
@@ -22,7 +25,7 @@ class SelectCommunity extends Component {
       placeholder="Select a community"
       fluid
       selection
-      loading={this.props.communities.isLoading}
+      loading={this.props.communities.isLoading  || false }
       onChange={ (event, data) => this.onDropdownChange(event, data)}
     />
     )
