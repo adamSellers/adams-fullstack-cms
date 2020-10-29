@@ -8,9 +8,18 @@ class Profile extends Component {
     this.props.onFetchUser();
   }
 
-  render() {
-    return (
-      <Segment>
+  userDetails() {
+    if (this.props.auth.isLoading || this.props.auth === null) {
+      return (
+        <Grid.Column stretched>
+          <Dimmer active inverted>
+            <Loader size="large">Churning the butter</Loader>
+          </Dimmer>
+          <Image src="/paragraph.png" />
+        </Grid.Column>
+      );
+    } else {
+      return (
         <Grid columns={2} divided stretched>
           <Grid.Row verticalAlign="middle">
             <Grid.Column width={8} textAlign="center">
@@ -29,6 +38,14 @@ class Profile extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+      );
+    }
+  }
+
+  render() {
+    return (
+      <Segment>
+        {this.userDetails()}
       </Segment>
     );
   };
