@@ -32,8 +32,8 @@ class SelectCommunity extends Component {
   };
 };
 
-const mapStateToProps = ({communities}) => {
-  return { communities };
+const mapStateToProps = ({communities, auth}) => {
+  return { communities, auth };
 };
 
 const mapDispatchToProps = (dispatch) => {
