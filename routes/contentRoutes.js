@@ -52,8 +52,9 @@ function contentRoutes(router) {
         } catch (error) {
           console.log(error);
         }
+      } else {
+        res.status(200).send({msg: 'Please enter a network ID'});
       }
-      res.status(200).send({msg: 'Please enter a network ID'});
   });
 }
 
