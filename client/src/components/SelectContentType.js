@@ -65,4 +65,4 @@ const mapStateToProps = ({ content, auth }) => {
 //     onFetchContentType: () => dispatch(fetchContentType())
 //   }
 // };
-export default connect(mapStateToProps, mapDispatchToProps)(SelectContentType);
+export default connect(mapStateToProps)(SelectContentType);
