@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Container, Card, Grid, Image } from 'semantic-ui-react';
+import { Segment, Container, Card, Grid, Image, Dimmer, Loader } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions';
 
