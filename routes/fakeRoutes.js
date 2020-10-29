@@ -10,7 +10,7 @@ function fakeRoutes(router) {
   router.get(
     '/api/v1/communities',
     requireLogin,
-    async (req, res, next) => {
+    async (req, res) => {
       try {
       console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`);
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);

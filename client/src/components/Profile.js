@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Container, Card, Grid } from 'semantic-ui-react';
+import { Segment, Container, Card, Grid, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions';
 
@@ -16,11 +16,13 @@ class Profile extends Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Container>
-                  <Card
-                    image={this.props.auth.sfProfilePic}
-                    header={`${this.props.auth.firstName} ${this.props.auth.lastName}`}
-                    description={`Salesforce Auth Token: ${this.props.auth.sfAccessToken}`}
-                  />
+                  <Card>
+                    <Image src={this.props.auth.sfProfilePic} wrapped ui={false} />
+                    <Card.Content>
+                      <Card.Header>{`${this.props.auth.firstName} ${this.props.auth.lastName}`}</Card.Header>
+                      <Card.Description>{`Salesforce Auth Token: ${this.props.auth.sfAccessToken}`}</Card.Description>
+                    </Card.Content>
+                  </Card>
                 </Container>
               </Grid.Column>
               <Grid.Column width={8} verticalAlign="middle">
