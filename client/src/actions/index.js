@@ -24,6 +24,7 @@ export const fetchCommunities = () => async dispatch => {
   }
 }
 
+
 /* This action will return the list of content (for ID news in fake backend -- TODO: Add
   content type inputs */
 export const fetchContentType = ( networkId ) => async dispatch => {

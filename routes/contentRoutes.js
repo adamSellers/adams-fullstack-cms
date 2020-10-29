@@ -34,21 +34,24 @@ function contentRoutes(router) {
   deliver API: 
   /services/data/v{{version}}/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery */
   router.get(
-    '/api/v1/getContent', 
+    '/api/v1/getContent/:networkId?', 
     requireLogin,
     async (req, res) => {
-			try {
-				const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery`, {
-					headers: {
-						'Authorization': `Bearer ${req.user.sfAccessToken}`
-					}
-				});
-				if (contentResponse.status === 200) {
-					res.status(200).send(contentResponse.data);
-				}
-			} catch (error) {
-				console.log(error);
-			}
+      if (req.params.networkId) {
+        try {
+          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery`, {
+            headers: {
+              'Authorization': `Bearer ${req.user.sfAccessToken}`
+            }
+          });
+          if (contentResponse.status === 200) {
+            res.status(200).send(contentResponse.data);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      res.status(200).send({msg: 'Please enter a network ID'});
   });
 }
 
