@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
-import { fetchCommunities } from '../actions';
+import { fetchCommunities, fetchContentType } from '../actions';
 
 class SelectCommunity extends Component {
 
@@ -12,6 +12,7 @@ class SelectCommunity extends Component {
 
   onDropdownChange(event, data) {
     console.log(`selected value is: ${data['value']}`);
+    this.props.onFetchContentType(data['value']);
   }
 
   render() {
@@ -33,7 +34,10 @@ const mapStateToProps = ({communities}) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { onFetchCommunities: () => dispatch(fetchCommunities()) }
+  return { 
+    onFetchCommunities: () => dispatch(fetchCommunities()),
+    onFetchContentType: (networkdId) => dispatch(fetchContentType(networkdId)) 
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectCommunity);

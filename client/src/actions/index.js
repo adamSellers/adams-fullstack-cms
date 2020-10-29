@@ -29,7 +29,7 @@ export const fetchCommunities = () => async dispatch => {
   content type inputs */
 export const fetchContentType = ( networkId ) => async dispatch => {
   try {
-    const res = await axios.get('api/v1/getContent');
+    const res = await axios.get(`api/v1/getContent/${networkId}`);
     dispatch({ type: FETCH_CONTENT, payload: res.data });
   } catch(err) { 
     dispatch(

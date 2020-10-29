@@ -38,8 +38,9 @@ function contentRoutes(router) {
     requireLogin,
     async (req, res) => {
       if (req.params.networkId) {
+        console.log(`found networkdId: ${req.params.networkId}`);
         try {
-          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery`, {
+          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/${req.params.networkId}/managed-content/delivery`, {
             headers: {
               'Authorization': `Bearer ${req.user.sfAccessToken}`
             }

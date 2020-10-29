@@ -5,16 +5,16 @@ import { fetchContentType } from '../actions';
 
 class SelectContentType extends Component {
 
-  componentDidMount() {
-    this.props.onFetchContentType();
-  }
+  // componentDidMount() {
+  //   this.props.onFetchContentType();
+  // }
 
   newsArticles() {
     if (this.props.content.isLoading || this.props.auth === null) {
       return (
         <Grid.Column stretched>
           <Dimmer active inverted>
-            <Loader size="large">Spinning the wheels</Loader>
+            <Loader size="large">Please Select a Community from the Dropdown above</Loader>
           </Dimmer>
           <Image src="/paragraph.png" />
         </Grid.Column>
@@ -60,9 +60,9 @@ const mapStateToProps = ({ content, auth }) => {
 };
 
 // these come from the index.js actions file
-const mapDispatchToProps = (dispatch) => {
-  return { 
-    onFetchContentType: () => dispatch(fetchContentType())
-  }
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return { 
+//     onFetchContentType: () => dispatch(fetchContentType())
+//   }
+// };
 export default connect(mapStateToProps, mapDispatchToProps)(SelectContentType);
