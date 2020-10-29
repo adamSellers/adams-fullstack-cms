@@ -20,7 +20,7 @@ function fakeRoutes(router) {
 					}        
       });
       if (communitiesResponse.status === 200) {
-        console.log(`communities response is: ${communitiesResponse}`);
+        console.log(`communities response is: ${JSON.stringify(communitiesResponse['communities'])}`);
         res.status(200).send(communitiesResponse['communities']);
         } 
       } catch (error) {
