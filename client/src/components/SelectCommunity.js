@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
-import { fetchCommunities, fetchContentType } from '../actions';
+import { fetchCommunities, fetchContentType, fetchUser } from '../actions';
 
 class SelectCommunity extends Component {
 
   componentDidMount() {
     this.props.onFetchCommunities();
+    this.props.onFetchUser();
     console.log(`the auth piece of state is: ${JSON.stringify(this.props.auth)}`);
   }
 
@@ -38,7 +39,8 @@ const mapStateToProps = ({communities, auth}) => {
 const mapDispatchToProps = (dispatch) => {
   return { 
     onFetchCommunities: () => dispatch(fetchCommunities()),
-    onFetchContentType: (networkdId) => dispatch(fetchContentType(networkdId)) 
+    onFetchContentType: (networkdId) => dispatch(fetchContentType(networkdId)),
+    onFetchUser: () => dispatch(fetchUser()) 
   }
 };
 
