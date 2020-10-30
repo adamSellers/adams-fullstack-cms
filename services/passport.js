@@ -38,10 +38,10 @@ passport.use(
         profileURL: process.env.SFLOGINURL + '/services/oauth2/userinfo'
     }, async (accessToken, profile, done) => {
         // test if user exists, update access token if it does
-        
+        console.log(`SF profile data returned: ${JSON.stringify(profile)}`);
         let update = { 
-            sfAccessToken: accessToken,
-            userEmail: profile.email };
+            sfAccessToken: accessToken
+        };
         let userId = profile.user_id;
         const existingUser = await User.findOneAndUpdate({ userId: userId }, update, {
             new: true
@@ -59,8 +59,7 @@ passport.use(
                 sfAccessToken: accessToken,
                 sfUserString: profile.profile,
                 sfProfilePic: profile.picture,
-                sfInstanceUrl: profile.urls.custom_domain,
-                userEmail: profile.email
+                sfInstanceUrl: profile.urls.custom_domain
             }).save();
             
             done(null, user);
