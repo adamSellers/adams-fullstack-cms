@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Grid, Card, Image, Dimmer } from 'semantic-ui-react';
+import { Segment, Grid, Card, Message } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchContentType } from '../actions';
 
@@ -13,10 +13,10 @@ class SelectContentType extends Component {
     if (this.props.content.isLoading || this.props.auth === null) {
       return (
         <Grid.Column stretched>
-          <Dimmer active inverted>
-            <p>To get started, please select a community from the dropdown above!</p>
-          </Dimmer>
-          <Image src="/paragraph.png" />
+          <Message>
+            <Message.Header>Not Quite There Yet</Message.Header>
+            <p>To see your content, please select a community from the dropdown list above</p>
+          </Message>
         </Grid.Column>
       );
     } else {
