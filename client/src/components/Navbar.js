@@ -41,7 +41,7 @@ class Navbar extends Component {
   }
 
   onHomeClick() {
-    if (this.props.auth) {
+    if (!_.isEmpty(this.props.auth.data)) {
       return '/content-type';
     } else {
       return '/';
