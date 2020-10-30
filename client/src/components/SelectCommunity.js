@@ -7,6 +7,7 @@ class SelectCommunity extends Component {
 
   componentDidMount() {
     this.props.onFetchCommunities();
+    console.log(`the auth piece of state is: ${JSON.stringify(this.props.auth)}`);
   }
 
 
@@ -30,8 +31,8 @@ class SelectCommunity extends Component {
   };
 };
 
-const mapStateToProps = ({communities}) => {
-  return { communities };
+const mapStateToProps = ({communities, auth}) => {
+  return { communities, auth };
 };
 
 const mapDispatchToProps = (dispatch) => {
