@@ -13,8 +13,6 @@ class Navbar extends Component {
     activeItem: 'home'
   }
 
-  activeItem = this.state;
-
   handleItemClick = (e, { name }) => {
     this.setState({ 
       activeItem: name
@@ -47,7 +45,7 @@ class Navbar extends Component {
       return (
         <Menu.Item
           name='profile'
-          active={this.activeItem === 'profile'}
+          active={this.state.activeItem === 'profile'}
           onClick={this.handleItemClick}
           as={Link}
           to='/profile'
@@ -74,14 +72,14 @@ class Navbar extends Component {
               <Menu stackable borderless>
                 <Menu.Item
                   name='home'
-                  active={this.activeItem === 'home'}
+                  active={this.state.activeItem === 'home'}
                   onClick={this.handleItemClick}
                   as={Link}
                   to={this.onHomeClick()}
                 ></Menu.Item>
                 <Menu.Item
                   name='about'
-                  active={this.activeItem === 'about'}
+                  active={this.state.activeItem === 'about'}
                   onClick={this.handleItemClick}
                   as={Link}
                   to='/about'
