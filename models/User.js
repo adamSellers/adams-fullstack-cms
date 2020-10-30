@@ -8,7 +8,8 @@ const userSchema = new Schema({
   sfAccessToken: String,
   sfUserString: String,
   sfProfilePic: String,
-  sfInstanceUrl: String
+  sfInstanceUrl: String,
+  userEmail: String
 });
 
 mongoose.model('users', userSchema);

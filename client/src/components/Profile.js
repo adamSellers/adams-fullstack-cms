@@ -34,7 +34,8 @@ class Profile extends Component {
             </Grid.Column>
             <Grid.Column width={8} verticalAlign="middle">
               <strong>SF User Id:</strong> {this.props.auth.data.userId} <br />
-              <strong>SF Instance URL:</strong> {this.props.auth.data.sfInstanceUrl}
+              <strong>SF Instance URL:</strong> {this.props.auth.data.sfInstanceUrl} <br />
+              <strong>User Email:</strong> {this.props.auth.data.userEmail}
             </Grid.Column>
           </Grid.Row>
         </Grid>
