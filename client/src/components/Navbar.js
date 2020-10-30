@@ -33,7 +33,7 @@ class Navbar extends Component {
   }
 
   showCommunityDropdown() {
-    if (this.props.auth) {
+    if (!_.isEmpty(this.props.auth.data)) {
       return (
         <SelectCommunity></SelectCommunity>
       )
