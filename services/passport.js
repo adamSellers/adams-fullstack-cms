@@ -41,10 +41,15 @@ passport.use(
         console.log(`SF profile stuff is: ${JSON.stringify(profile)}`);
         let update = { sfAccessToken: accessToken, userEmail: profile.email };
         let userId = profile.user_id;
-        const existingUser = await User.findOneAndUpdate({ userId: userId }, update, {
-            new: true
-        });
-
+        try{
+            const existingUser = await User.findOneAndUpdate({ userId: userId }, update, {
+                new: true
+            });
+        } catch(err) {
+            // probably handle this better...
+            console.error(err);
+        }
+        
         if (existingUser) {
             // user exists, update the access token
             done(null, existingUser);
@@ -57,7 +62,8 @@ passport.use(
                 sfAccessToken: accessToken,
                 sfUserString: profile.profile,
                 sfProfilePic: profile.picture,
-                sfInstanceUrl: profile.urls.custom_domain
+                sfInstanceUrl: profile.urls.custom_domain,
+                userEmail: profile.email
             }).save();
             
             done(null, user);
