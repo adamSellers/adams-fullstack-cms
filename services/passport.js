@@ -39,7 +39,7 @@ passport.use(
     }, async (accessToken, refreshToken, profile, done) => {
         // test if user exists, update access token if it does
         console.log(`SF profile stuff is: ${JSON.stringify(profile)}`);
-        let update = { sfAccessToken: accessToken };
+        let update = { sfAccessToken: accessToken, userEmail: profile.email };
         let userId = profile.user_id;
         const existingUser = await User.findOneAndUpdate({ userId: userId }, update, {
             new: true
