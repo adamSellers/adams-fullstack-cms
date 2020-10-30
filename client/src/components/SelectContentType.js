@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Grid, Card, Image, Dimmer, Loader } from 'semantic-ui-react';
+import { Segment, Grid, Card, Image, Dimmer } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchContentType } from '../actions';
 
@@ -14,7 +14,7 @@ class SelectContentType extends Component {
       return (
         <Grid.Column stretched>
           <Dimmer active inverted>
-            <Loader size="large">Please Select a Community from the Dropdown above</Loader>
+            <p>To get started, please select a community from the dropdown above!</p>
           </Dimmer>
           <Image src="/paragraph.png" />
         </Grid.Column>
