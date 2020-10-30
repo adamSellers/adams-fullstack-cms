@@ -40,6 +40,20 @@ class Navbar extends Component {
     };
   }
 
+  showProfileTab() {
+    if (!_.isEmpty(this.props.auth.data)) {
+      return (
+        <Menu.Item
+          name='profile'
+          active={activeItem === 'profile'}
+          onClick={this.handleItemClick}
+          as={Link}
+          to='/profile'
+        ></Menu.Item>
+      )
+    };
+  }
+
   onHomeClick() {
     if (!_.isEmpty(this.props.auth.data)) {
       return '/content-type';
@@ -71,13 +85,7 @@ class Navbar extends Component {
                   as={Link}
                   to='/about'
                 ></Menu.Item>
-                <Menu.Item
-                  name='profile'
-                  active={activeItem === 'profile'}
-                  onClick={this.handleItemClick}
-                  as={Link}
-                  to='/profile'
-                ></Menu.Item>
+                {this.showProfileTab()}
               </Menu>
             </Container>
           </Grid.Column>
