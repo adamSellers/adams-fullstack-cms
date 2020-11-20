@@ -50,8 +50,8 @@ class SelectContentType extends Component {
 }
 
 // the come from the combineReducers export
-const mapStateToProps = ({ content }) => {
-  return { content };
+const mapStateToProps = ({ content, auth }) => {
+  return { content, auth };
 };
 
 export default connect(mapStateToProps)(SelectContentType);
