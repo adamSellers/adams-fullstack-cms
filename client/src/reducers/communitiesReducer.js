@@ -24,7 +24,6 @@ const communtiesReducer = (state = initialState, action) => {
           activeCommunities.push(singleItem);
         }
       });
-      console.log(`in the communities reducer about to return ${JSON.stringify(activeCommunities)}`);
       return {...state, data: activeCommunities, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};

@@ -16,7 +16,7 @@ const contentReducer = (state = initialState, action) => {
       let count = 0;
       const contentList = [];
       action.payload['items'].forEach( el => {
-        if(el.type === 'news' && el.managedContentId != '20Y2y000000GrsuEAC') {
+        if(el.type === 'news') {
           let singleItem = {
             key: el.managedContentId,
             title: (el.contentNodes.title) ? el.contentNodes.title.value : null,
@@ -27,11 +27,8 @@ const contentReducer = (state = initialState, action) => {
             body: (el.contentNodes.body) ? el.contentNodes.body.value : null
           }
           contentList.push(singleItem);
-          count++;
-          console.log(`pushed ${count} items to the array`);
         }
       });
-      console.log(`about to return from the reducer: ${JSON.stringify(contentList)}`);
       return {...state, data: contentList, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
