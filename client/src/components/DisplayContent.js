@@ -54,4 +54,4 @@ const mapStateToProps = ({ content, auth }) => {
   return { content, auth };
 };
 
-export default connect(mapStateToProps)(SelectContentType);
+export default connect(mapStateToProps)(DisplayContent);
