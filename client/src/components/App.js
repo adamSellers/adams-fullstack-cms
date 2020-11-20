@@ -10,7 +10,7 @@ import Welcome from './Welcome';
 import Footer from './Footer';
 import About from './About';
 import Profile from './Profile';
-import SelectContentType from './SelectContentType';
+import DisplayContent from './DisplayContent';
 
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
             <Welcome />
           </Route>
           <Route exact path="/content-type">
-            <SelectContentType />
+            <DisplayContent />
           </Route>
           <Route exact path="/profile">
             <Profile />
