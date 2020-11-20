@@ -38,7 +38,7 @@ function contentRoutes(router) {
       if (req.params.channelId) {
         console.log(`found networkdId: ${req.params.channelId}`);
         try {
-          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/${req.params.channelId}/managed-content/delivery`, {
+          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/cms/delivery/channels/${req.params.channelId}/contents/query`, {
             headers: {
               'Authorization': `Bearer ${req.user.sfAccessToken}`
             }
