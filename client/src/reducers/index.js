@@ -5,6 +5,6 @@ import contentReducer from './contentReducer';
 
 export default combineReducers({
   auth: authReducer,
-  communities: channelsReducer,
+  channels: channelsReducer,
   content: contentReducer
 });
