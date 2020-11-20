@@ -13,7 +13,7 @@ class SelectChannel extends Component {
 
   onDropdownChange(event, data) {
     console.log(`selected value is: ${data['value']}`);
-    // fire the action that will get the content for a particular community id
+    // fire the action that will get the content for a particular channel id
     this.props.onFetchContentType(data['value']);
   }
 
@@ -21,7 +21,7 @@ class SelectChannel extends Component {
     return (
     <Dropdown 
       options={this.props.channels.data}
-      placeholder="Select a community"
+      placeholder="Available Channels for Org"
       fluid
       selection
       loading={this.props.channels.isLoading}

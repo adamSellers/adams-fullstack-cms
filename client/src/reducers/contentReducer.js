@@ -28,7 +28,6 @@ const contentReducer = (state = initialState, action) => {
           contentList.push(singleItem);
         }
       });
-      console.log(`from the content reducer, about to return: ${JSON.stringify(contentList)}`);
       return {...state, data: contentList, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
