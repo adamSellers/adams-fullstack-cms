@@ -19,11 +19,11 @@ const contentReducer = (state = initialState, action) => {
         if(el.type === 'news' && el.managedContentId != '20Y2y000000GrsuEAC') {
           let singleItem = {
             key: el.managedContentId,
-            title: el.contentNodes.title.value,
-            excerpt: el.contentNodes.excerpt.value,
-            typeLabel: el.typeLabel,
-            image: el.contentNodes.bannerImage.url,
-            imageAlt: el.contentNodes.bannerImage.altText,
+            title: (el.contentNodes.title) ? el.contentNodes.title.value : null,
+            excerpt: (el.contentNodes.excerpt) ? el.contentNodes.excerpt.value : null,
+            typeLabel: (el.typeLabel) ? el.typeLabel: null,
+            image: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.url : null,
+            imageAlt: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.altText : null,
             body: (el.contentNodes.body) ? el.contentNodes.body.value : null
           }
           contentList.push(singleItem);
