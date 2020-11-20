@@ -4,17 +4,17 @@ const requireLogin = require('../middlewares/requireLogin');
 const axios = require('axios');
 
 function contentRoutes(router) {
-  /* Return a list of community ID's and names using the 
+  /* Return a list of Channel ID's and names using the 
   content delivery API:
-  {{_endpoint}}/services/data/v{{version}}/connect/communities */
+  {{_endpoint}}/services/data/v{{version}}/connect/cms/delivery/channels */
   router.get(
-    '/api/v1/communities',
+    '/api/v1/channels',
     requireLogin,
     async (req, res) => {
       try {
-      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v${process.env.API_VERSION}/connect/communities`);
+      console.log(`going to call ${req.user.sfInstanceUrl}/services/data/v${process.env.API_VERSION}/connect/cms/delivery/channels`);
       console.log(`actual bearer token: ${req.user.sfAccessToken}`);
-      const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities`, {
+      const communitiesResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v${process.env.API_VERSION}/connect/cms/delivery/channels`, {
 					headers: {
 						'Authorization': `Bearer ${req.user.sfAccessToken}`
 					}        
@@ -29,31 +29,29 @@ function contentRoutes(router) {
     }
   );
 
-  /* Return a list of content for a given community id, filter out
-  by content type from the dropdown. Grabbed from the content
-  deliver API: 
-  /services/data/v{{version}}/connect/communities/0DB2w000000wr9JGAQ/managed-content/delivery */
+  /* Return a list of content for a given channel id, taken from the content delivery api
+  /services/data/v{{version}}/connect/cms/delivery/channels/{{channelId}}/contents/query */
   router.get(
-    '/api/v1/getContent/:networkId?', 
+    '/api/v1/getContent/:channelId?', 
     requireLogin,
     async (req, res) => {
-      if (req.params.networkId) {
-        console.log(`found networkdId: ${req.params.networkId}`);
+      if (req.params.channelId) {
+        console.log(`found networkdId: ${req.params.channelId}`);
         try {
-          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/${req.params.networkId}/managed-content/delivery`, {
+          const contentResponse = await axios.get(`${req.user.sfInstanceUrl}/services/data/v49.0/connect/communities/${req.params.channelId}/managed-content/delivery`, {
             headers: {
               'Authorization': `Bearer ${req.user.sfAccessToken}`
             }
           });
           if (contentResponse.status === 200) {
-            console.log(`we have content for ${req.params.networkId}! Content returned: ${JSON.stringify(contentResponse.data)}`);
+            console.log(`we have content for ${req.params.channelId}! Content returned: ${JSON.stringify(contentResponse.data)}`);
             res.status(200).send(contentResponse.data);
           }
         } catch (error) {
           console.log(error);
         }
       } else {
-        res.status(200).send({msg: 'Please enter a network ID'});
+        res.status(200).send({msg: 'Please enter a channel ID'});
       }
   });
 }

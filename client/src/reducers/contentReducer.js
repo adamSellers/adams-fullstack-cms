@@ -13,7 +13,6 @@ const contentReducer = (state = initialState, action) => {
     case FETCH_CONTENT:
       // reduce the returned state down to an array of options
       // filter here to limit to news articles only
-      let count = 0;
       const contentList = [];
       action.payload['items'].forEach( el => {
         if(el.type === 'news') {

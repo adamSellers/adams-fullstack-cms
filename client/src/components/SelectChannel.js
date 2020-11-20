@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
-import { fetchCommunities, fetchContentType, fetchUser } from '../actions';
+import { fetchChannels, fetchContentType, fetchUser } from '../actions';
 
-class SelectCommunity extends Component {
+class SelectChannel extends Component {
 
   componentDidMount() {
-    this.props.onFetchCommunities();
+    this.props.onFetchChannels();
     this.props.onFetchUser();
-    console.log(`the auth piece of state is: ${JSON.stringify(this.props.auth)}`);
   }
 
 
@@ -21,27 +20,27 @@ class SelectCommunity extends Component {
   render() {
     return (
     <Dropdown 
-      options={this.props.communities.data}
+      options={this.props.channels.data}
       placeholder="Select a community"
       fluid
       selection
-      loading={this.props.communities.isLoading}
+      loading={this.props.channels.isLoading}
       onChange={ (event, data) => this.onDropdownChange(event, data)}
     />
     )
   };
 };
 
-const mapStateToProps = ({communities, auth}) => {
-  return { communities, auth };
+const mapStateToProps = ({channels, auth}) => {
+  return { channels, auth };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return { 
-    onFetchCommunities: () => dispatch(fetchCommunities()),
-    onFetchContentType: (networkdId) => dispatch(fetchContentType(networkdId)),
+    onFetchChannels: () => dispatch(fetchChannels()),
+    onFetchContentType: (channelId) => dispatch(fetchContentType(channelId)),
     onFetchUser: () => dispatch(fetchUser()) 
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectCommunity);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectChannel);

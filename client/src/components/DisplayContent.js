@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment, Grid, Card, Message, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-class SelectContentType extends Component {
+class DisplayContent extends Component {
 
   newsArticles() {
     if (this.props.content.isLoading) {
@@ -10,7 +10,7 @@ class SelectContentType extends Component {
         <Grid.Column stretched>
           <Message>
             <Message.Header>Not Quite There Yet</Message.Header>
-            <p>To see your content, please select a community from the dropdown list above</p>
+            <p>To see your content, please select a channel from the dropdown list above</p>
           </Message>
         </Grid.Column>
       );
