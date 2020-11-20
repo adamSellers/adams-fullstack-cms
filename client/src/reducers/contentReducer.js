@@ -25,8 +25,8 @@ const contentReducer = (state = initialState, action) => {
             imageAlt: el.contentNodes.bannerImage.altText,
             body: el.contentNodes.body.value
           }
-          // console.log(`in the reducer filtering for news: ${JSON.stringify(singleItem)} about to be pushed`);
           contentList.push(singleItem);
+          console.log(`in the forEach and contentList is now: ${JSON.stringify(contentList)}`);
         }
       });
       console.log(`about to return from the reducer: ${JSON.stringify(contentList)}`);
@@ -34,6 +34,7 @@ const contentReducer = (state = initialState, action) => {
     case "ERROR":
       return {...state, error: action.msg};
     default:
+      console.log(`it's returning the default state`);
       return state;
   }
 }
