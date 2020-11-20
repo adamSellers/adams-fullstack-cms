@@ -25,7 +25,7 @@ const contentReducer = (state = initialState, action) => {
             imageAlt: el.contentNodes.bannerImage.altText,
             body: el.contentNodes.body.value
           }
-          console.log(`in the reducer filtering for news: ${JSON.stringify(singleItem)} about to be pushed`);
+          // console.log(`in the reducer filtering for news: ${JSON.stringify(singleItem)} about to be pushed`);
           contentList.push(singleItem);
         }
       });
