@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class SelectContentType extends Component {
 
   newsArticles() {
-    if (this.props.content.isLoading || this.props.auth === null) {
+    if (this.props.content.isLoading) {
       return (
         <Grid.Column stretched>
           <Message>
@@ -50,8 +50,8 @@ class SelectContentType extends Component {
 }
 
 // the come from the combineReducers export
-const mapStateToProps = ({ content, auth }) => {
-  return { content, auth };
+const mapStateToProps = ({ content }) => {
+  return { content };
 };
 
 export default connect(mapStateToProps)(SelectContentType);
