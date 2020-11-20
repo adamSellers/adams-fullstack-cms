@@ -25,9 +25,11 @@ const contentReducer = (state = initialState, action) => {
             imageAlt: el.contentNodes.bannerImage.altText,
             body: el.contentNodes.body.value
           }
+          console.log(`in the reducer filtering for news: ${JSON.stringify(singleItem)} about to be pushed`);
           contentList.push(singleItem);
         }
       });
+      console.log(`about to return from the reducer: ${JSON.stringify(contentList)}`);
       return {...state, data: contentList, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};

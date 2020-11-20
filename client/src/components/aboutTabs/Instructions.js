@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Segment, Container } from 'semantic-ui-react';
 
-export default class HowToUse extends Component {
+export default class Instructions extends Component {
   render() {
     return (
       <Segment placeholder>
