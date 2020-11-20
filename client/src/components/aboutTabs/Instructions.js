@@ -6,7 +6,12 @@ export default class Instructions extends Component {
     return (
       <Segment placeholder>
         <Container text verticalAlign="middle" stretched>
-        <h2 class="ui header"><i aria-hidden="true" class="plug icon"></i><div class="content">How to Use This Tool</div></h2>
+          <Header as='h2'>
+            <Icon name='plug' />
+            <Header.Content>
+              How to Use This Tool
+            </Header.Content>
+          </Header>
         </Container>
       </Segment>
     )
