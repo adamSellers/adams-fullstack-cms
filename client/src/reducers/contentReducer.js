@@ -16,7 +16,7 @@ const contentReducer = (state = initialState, action) => {
       let count = 0;
       const contentList = [];
       action.payload['items'].forEach( el => {
-        if(el.type === 'news') {
+        if(el.type === 'news' && el.managedContentId != '20Y2y000000GrsuEAC') {
           let singleItem = {
             key: el.managedContentId,
             title: el.contentNodes.title.value,
@@ -24,7 +24,7 @@ const contentReducer = (state = initialState, action) => {
             typeLabel: el.typeLabel,
             image: el.contentNodes.bannerImage.url,
             imageAlt: el.contentNodes.bannerImage.altText,
-            body: el.contentNodes.body.value || null
+            body: el.contentNodes.body.value
           }
           contentList.push(singleItem);
           count++;
