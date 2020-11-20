@@ -32,7 +32,7 @@ function contentRoutes(router) {
   /* Return a list of content for a given channel id, taken from the content delivery api
   /services/data/v{{version}}/connect/cms/delivery/channels/{{channelId}}/contents/query */
   router.get(
-    '/api/v1/getContent/:channelId?', 
+    '/api/v1/getContent/:channelId', 
     requireLogin,
     async (req, res) => {
       if (req.params.channelId) {
