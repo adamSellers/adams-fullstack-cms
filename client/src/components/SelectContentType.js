@@ -40,7 +40,7 @@ class SelectContentType extends Component {
     return(
       <Segment placeholder>
         <Grid stretched stackable columns="4" textAlign="center" verticalAlign="middle">
-          <Grid.Row>
+          <Grid.Row style={{ marginBottom: '2em' }}>
               {this.newsArticles()}
           </Grid.Row>
         </Grid>
