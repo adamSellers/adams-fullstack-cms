@@ -24,7 +24,7 @@ const contentReducer = (state = initialState, action) => {
             typeLabel: el.typeLabel,
             image: el.contentNodes.bannerImage.url,
             imageAlt: el.contentNodes.bannerImage.altText,
-            body: (el.contentNodes.body.value) ? el.contentNodes.body.value : null
+            body: (el.contentNodes.body) ? el.contentNodes.body.value : null
           }
           contentList.push(singleItem);
           count++;
