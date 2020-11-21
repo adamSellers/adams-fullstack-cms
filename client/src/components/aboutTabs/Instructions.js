@@ -34,14 +34,14 @@ export default class Instructions extends Component {
               news (standard content type delivered with Salesforce CMS) as this app is (currently) set to only display a single content type. This may change at some point
               in the future, but certainly not today. To get started with setting up CMS in your org, head over to Trailhead and complete the 
               <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">CMS Module</a>. <br />
-              It's important to note, that your Salesforce Org already has CMS included as a freemium offering - enough for you to get started on your Salesforce CMS journey today. 
+              It's important to note, that your Salesforce Org already has CMS included as a freemium offering - enough for you to get started on your Salesforce CMS journey today. <br />
             </p>
           </Container>
           <Container text verticalAlign="middle" stretched>
-            <p>
             <Header as='h4'>
               Working in this app
             </Header>
+            <p>
               To get started, simply login with the button in the header above. This will take you to a Salesforce login screen, use your Salesforce credentials to login and
               you'll be returned to the app. This is an implementation of Salesforce Identity, a technology that allows us to use a Salesforce Org as a cloud IDP (Identity Provier)
               to store and manage user details and session information as required. 
