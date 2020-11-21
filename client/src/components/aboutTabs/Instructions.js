@@ -24,14 +24,16 @@ export default class Instructions extends Component {
               Salesforce Setup
             </Header>
             <p>
-              In order to display information from Salesforce, you must first ensure you've setup the CMS with some available channels. Those channels must have content of type
-              news (standard content type delivered with Salesforce CMS) as this app is (currently) set to only display a single content type. This may change at some point
-              in the future, but certainly not today. 
+              Salesforce CMS is a unified shared service for all of Salesforce. What does that mean, exactly? It means that you can create content and extend it to any channel built on Salesforce, 
+              such as a commerce site, a marketing email, a customer community, or a partner portal. What’s more, you can use the same content on channels outside of Salesforce, and it's this 
+              headless feature that this site is designed to showcase. 
             </p>
             <p>
               <Image floated="left" src="/cms_badge.png" />
-              To get started with setting up CMS in your org, head over to Trailhead and complete the  <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">
-                CMS Module</a>.
+              In order to display information from Salesforce, you must first ensure you've setup the CMS with some available channels. Those channels must have content of type
+              news (standard content type delivered with Salesforce CMS) as this app is (currently) set to only display a single content type. This may change at some point
+              in the future, but certainly not today. To get started with setting up CMS in your org, head over to Trailhead and complete the 
+              <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">CMS Module</a>. <br />
               It's important to note, that your Salesforce Org already has CMS included as a freemium offering - enough for you to get started on your Salesforce CMS journey today. 
             </p>
           </Container>
