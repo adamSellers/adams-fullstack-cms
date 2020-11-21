@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_COMMUNITIES, FETCH_CONTENT } from './types';
+import { FETCH_USER, FETCH_CHANNELS, FETCH_CONTENT } from './types';
 
 export const fetchUser = () => async dispatch => {
   try {
@@ -12,11 +12,11 @@ export const fetchUser = () => async dispatch => {
   }
 };
 
-/* This action will return the list of communities available */
-export const fetchCommunities = () => async dispatch => {
+/* This action will return the list of cms channels available */
+export const fetchChannels = () => async dispatch => {
   try {
-    const res = await axios.get('api/v1/communities');
-    dispatch({ type: FETCH_COMMUNITIES, payload: res.data });
+    const res = await axios.get('api/v1/channels');
+    dispatch({ type: FETCH_CHANNELS, payload: res.data });
   } catch(err) { 
     dispatch(
       { type: "ERROR", msg: "unable to fetch data"}
@@ -27,9 +27,9 @@ export const fetchCommunities = () => async dispatch => {
 
 /* This action will return the list of content (for ID news in fake backend -- TODO: Add
   content type inputs */
-export const fetchContentType = ( networkId ) => async dispatch => {
+export const fetchContentType = ( channelId ) => async dispatch => {
   try {
-    const res = await axios.get(`api/v1/getContent/${networkId}`);
+    const res = await axios.get(`api/v1/getContent/${channelId}`);
     dispatch({ type: FETCH_CONTENT, payload: res.data });
   } catch(err) { 
     dispatch(

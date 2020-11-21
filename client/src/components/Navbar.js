@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import LoginButtonNav from './LoginButtonNav';
 import LogoutButtonNav from './LogoutButtonNav';
-import SelectCommunity from './SelectCommunity';
+import SelectChannel from './SelectChannel';
 
 class Navbar extends Component {
   state = { 
@@ -35,7 +35,7 @@ class Navbar extends Component {
   showCommunityDropdown() {
     if (!_.isEmpty(this.props.auth.data)) {
       return (
-        <SelectCommunity></SelectCommunity>
+        <SelectChannel></SelectChannel>
       )
     };
   }
