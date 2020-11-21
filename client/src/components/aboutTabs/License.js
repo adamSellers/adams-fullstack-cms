@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Segment, Container, Header, Icon } from 'semantic-ui-react';
 
-export default class Team extends Component {
+export default class License extends Component {
   render() {
     return (
-      <Segment placeholder>
-        <Container text verticalAlign="middle" stretched>
-          <Header as="h2">
-            <Icon name="bug" />
-            <Header.Content>
-              License Information
-            </Header.Content>
-          </Header>
+      <Container text verticalAlign="middle" stretched>
+        <Header as="h2">
+          <Icon name="bug" />
+          <Header.Content>
+            License Information
+          </Header.Content>
+        </Header>
+        <Segment>
           <p>
             Copyright 2020 Adam Sellers
             Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to 
@@ -22,10 +22,10 @@ export default class Team extends Component {
 
             THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS 
             FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
-          IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           </p>
-        </Container>
-      </Segment>
+        </Segment>
+      </Container>
     )
   }
 }
