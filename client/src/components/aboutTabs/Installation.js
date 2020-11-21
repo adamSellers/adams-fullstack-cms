@@ -18,7 +18,7 @@ export default class Installation extends Component {
           This app uses a combination of technologies to deliver this headless CMS experience, technologies used:
           <List>
             <List.Item icon="cloud" content="Express + Node.js on the backend" />
-            <List.Item icon="cloud" content="React on the frontend" />
+            <List.Item icon="cloud" content="React + Redux on the frontend" />
             <List.Item icon="cloud" content="Salesforce for identity and CMS (of course)" />
             <List.Item icon="cloud" content="Redis" />
             <List.Item icon="cloud" content="MongoDB" />
