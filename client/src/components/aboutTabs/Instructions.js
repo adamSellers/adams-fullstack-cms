@@ -36,10 +36,10 @@ export default class Instructions extends Component {
             </p>
           </Container>
           <Container text verticalAlign="middle" stretched>
+            <p>
             <Header as='h4'>
               Working in this app
             </Header>
-            <p>
               To get started, simply login with the button in the header above. This will take you to a Salesforce login screen, use your Salesforce credentials to login and
               you'll be returned to the app. This is an implementation of Salesforce Identity, a technology that allows us to use a Salesforce Org as a cloud IDP (Identity Provier)
               to store and manage user details and session information as required. 
