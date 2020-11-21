@@ -6,7 +6,7 @@ export default class License extends Component {
     return (
       <Container text verticalAlign="middle" stretched>
         <Header as="h2">
-          <Icon name="bug" />
+          <Icon name="legal" />
           <Header.Content>
             License Information
           </Header.Content>
