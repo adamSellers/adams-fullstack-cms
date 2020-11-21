@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Container, Header, Icon, Grid } from 'semantic-ui-react';
+import { Segment, Container, Header, Icon, Image } from 'semantic-ui-react';
 
 export default class Instructions extends Component {
   render() {
@@ -28,7 +28,9 @@ export default class Instructions extends Component {
             in the future, but certainly not today. 
           </p>
           <p>
-            Details on setting up content for your Salesforce Org are found <a href="https://help.salesforce.com/articleView?id=community_managed_content_start_using.htm">here</a>.
+            <Image floated="left" src="/cms_badge.png" />
+            To get started with setting up CMS in your org, head over to Trailhead and complete the  <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">
+              CMS Module</a>.
             It's important to note, that your Salesforce Org already has CMS included as a freemium offering - enough for you to get started on your Salesforce CMS journey today. 
           </p>
           <Header as='h4'>
@@ -40,6 +42,7 @@ export default class Instructions extends Component {
             to store and manage user details and session information as required. 
           </p>
           <p>
+            <Image floated="right" src="/dropdown.png" />
             Once logged in, you will see a prompt on the home page asking for you to select an available channel. If there are no records in your dropdown list in the header, then 
             check your Salesforce CMS setup to ensure you have published at least one channel. It's typical that you might publish a community with the Salesforce Experience Cloud that
             will also create a channel of the same name - although this isn't strictly necessay. Selecting your channel from the dropdown will display the available content for that
