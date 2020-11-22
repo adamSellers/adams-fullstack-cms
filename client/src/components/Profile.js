@@ -23,8 +23,8 @@ class Profile extends Component {
         <Segment>
           <Grid columns={2} divided stretched>
             <Grid.Row verticalAlign="middle">
-              <Grid.Column width={8} textAlign="center">
-                  <Card>
+              <Grid.Column width={8} >
+                  <Card centered>
                     <Image src={this.props.auth.data.sfProfilePic} wrapped ui={false} />
                     <Card.Content>
                       <Card.Header>{`${this.props.auth.data.firstName} ${this.props.auth.data.lastName}`}</Card.Header>
