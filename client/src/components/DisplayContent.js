@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Segment, Grid, Card, Message, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
