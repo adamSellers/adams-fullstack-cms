@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Container, Card, Grid, Image, Dimmer, Loader } from 'semantic-ui-react';
+import { Segment, Container, Card, Grid, Image, Dimmer, Loader, Header, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions';
 
@@ -20,32 +20,41 @@ class Profile extends Component {
       );
     } else {
       return (
-        <Grid columns={2} divided centered stretched>
-          <Grid.Row verticalAlign="middle">
-            <Grid.Column width={8} textAlign="center">
-                <Card>
-                  <Image src={this.props.auth.data.sfProfilePic} wrapped ui={false} />
-                  <Card.Content>
-                    <Card.Header>{`${this.props.auth.data.firstName} ${this.props.auth.data.lastName}`}</Card.Header>
-                  </Card.Content>
-                </Card>
-            </Grid.Column>
-            <Grid.Column width={8} verticalAlign="middle">
-              <strong>SF User Id:</strong> {this.props.auth.data.userId} <br />
-              <strong>SF Instance URL:</strong> {this.props.auth.data.sfInstanceUrl} <br />
-              <strong>User Email:</strong> {this.props.auth.data.userEmail}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <Segment>
+          <Grid columns={2} divided stretched>
+            <Grid.Row verticalAlign="middle">
+              <Grid.Column width={8} textAlign="center">
+                  <Card>
+                    <Image src={this.props.auth.data.sfProfilePic} wrapped ui={false} />
+                    <Card.Content>
+                      <Card.Header>{`${this.props.auth.data.firstName} ${this.props.auth.data.lastName}`}</Card.Header>
+                    </Card.Content>
+                  </Card>
+              </Grid.Column>
+              <Grid.Column width={8} verticalAlign="middle">
+                <strong>SF User Id:</strong> {this.props.auth.data.userId} <br />
+                <strong>SF Instance URL:</strong> {this.props.auth.data.sfInstanceUrl} <br />
+                <strong>User Email:</strong> {this.props.auth.data.userEmail}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
       );
     }
   }
 
   render() {
     return (
-      <Container>
-        {this.userDetails()}
-      </Container>
+      <Segment>
+        <Container>
+          <Header as="h2">
+            <Icon name="cloud" />
+            <Header.Content>Your Salesforce User Details</Header.Content>
+          </Header>
+          {this.userDetails()}
+        </Container>
+      </Segment>
+      
     );
   };
 }
