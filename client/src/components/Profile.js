@@ -20,17 +20,15 @@ class Profile extends Component {
       );
     } else {
       return (
-        <Grid columns={2} divided stretched>
+        <Grid columns={2} divided centered stretched>
           <Grid.Row verticalAlign="middle">
             <Grid.Column width={8} textAlign="center">
-              <Container>
                 <Card>
                   <Image src={this.props.auth.data.sfProfilePic} wrapped ui={false} />
                   <Card.Content>
                     <Card.Header>{`${this.props.auth.data.firstName} ${this.props.auth.data.lastName}`}</Card.Header>
                   </Card.Content>
                 </Card>
-              </Container>
             </Grid.Column>
             <Grid.Column width={8} verticalAlign="middle">
               <strong>SF User Id:</strong> {this.props.auth.data.userId} <br />
@@ -45,9 +43,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <Segment>
+      <Container>
         {this.userDetails()}
-      </Segment>
+      </Container>
     );
   };
 }
