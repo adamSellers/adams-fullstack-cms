@@ -39,7 +39,7 @@ class DisplayContent extends Component {
   render() {
     return(
       <Segment placeholder>
-        <Grid stretched stackable columns="4" textAlign="center" verticalAlign="middle">
+        <Grid centered stackable columns="4" textAlign="center" verticalAlign="middle">
           <Grid.Row style={{ marginBottom: '2em' }}>
               {this.newsArticles()}
           </Grid.Row>

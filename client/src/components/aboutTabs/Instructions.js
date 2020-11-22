@@ -31,8 +31,8 @@ export default class Instructions extends Component {
             <Image floated="left" src="/cms_badge.png" />
             In order to display information from Salesforce, you must first ensure you've setup the CMS with some available channels. Those channels must have content of type
             news (standard content type delivered with Salesforce CMS) as this app is (currently) set to only display a single content type. This may change at some point
-            in the future, but certainly not today. To get started with setting up CMS in your org, head over to Trailhead and complete the 
-            <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">CMS Module</a>. <br />
+            in the future, but certainly not today. To get started with setting up CMS in your org, head over to Trailhead and complete 
+            the <a href="https://trailhead.salesforce.com/en/content/learn/modules/salesforce-cms-basics">CMS Module</a>. <br />
             It's important to note, that your Salesforce Org already has CMS included as a freemium offering - enough for you to get started on your Salesforce CMS journey today.
           </p>
           </Segment>
