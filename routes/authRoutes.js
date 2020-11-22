@@ -19,7 +19,7 @@ function salesforceAuthRoutes(router) {
     passport.authenticate('salesforce'),
     (req, res) => {
       // auth successful, redirect to logged in page
-      res.redirect('/content-type');
+      res.redirect('/display-content');
     });
 
     /* logout route */
