@@ -36,8 +36,9 @@ class DisplayContent extends Component {
     }
   }
 
-  handleOnClick() {
+  handleOnClick( event, data ) {
     // function to navigate to single article
+    console.log(`data is: ${JSON.stringify(data)}`);
 
   }
 
