@@ -11,6 +11,7 @@ import Footer from './Footer';
 import About from './About';
 import Profile from './Profile';
 import DisplayContent from './DisplayContent';
+import SingleContent from './SingleContent';
 
 
 class App extends Component {
@@ -24,18 +25,11 @@ class App extends Component {
       <Router>
         <Container>
           <Navbar />
-          <Route exact path="/">
-            <Welcome />
-          </Route>
-          <Route exact path="/content-type">
-            <DisplayContent />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
+          <Route exact path="/" component={Welcome} />
+          <Route exact path="/display-content" component={DisplayContent} />
+          <Route exact path="/content-item" component={SingleContent} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/about" component={About} />
           <Footer />
         </Container>
       </Router>

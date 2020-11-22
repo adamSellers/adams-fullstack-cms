@@ -18,7 +18,7 @@ class DisplayContent extends Component {
       const cards = this.props.content.data.map( article => {
         return (
           <Grid.Column stretched>
-            <Card key={article.key}>
+            <Card key={article.key} onClick={this.handleOnClick()}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
@@ -36,6 +36,11 @@ class DisplayContent extends Component {
     }
   }
 
+  handleOnClick() {
+    // function to navigate to single article
+
+  }
+
   render() {
     return(
       <Segment placeholder>
@@ -49,7 +54,7 @@ class DisplayContent extends Component {
   };
 }
 
-// the come from the combineReducers export
+// these come from the combineReducers export
 const mapStateToProps = ({ content, auth }) => {
   return { content, auth };
 };
