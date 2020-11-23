@@ -29,7 +29,7 @@ class App extends Component {
           <Route exact path="/display-content" component={DisplayContent} />
           <Route exact path="/content-item/:contentId" component={SingleContent} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/instructions" component={About} />
           <Footer />
         </Container>
       </Router>

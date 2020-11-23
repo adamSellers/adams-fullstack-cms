@@ -78,11 +78,11 @@ class Navbar extends Component {
                   to={this.onHomeClick()}
                 ></Menu.Item>
                 <Menu.Item
-                  name='about'
-                  active={this.state.activeItem === 'about'}
+                  name='instructions'
+                  active={this.state.activeItem === 'instructions'}
                   onClick={this.handleItemClick}
                   as={Link}
-                  to='/about'
+                  to='/instructions'
                 ></Menu.Item>
                 {this.showProfileTab()}
               </Menu>
