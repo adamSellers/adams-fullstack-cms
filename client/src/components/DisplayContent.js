@@ -20,7 +20,7 @@ class DisplayContent extends Component {
         let contentId = article.key;
         return (
           <Grid.Column stretched>
-            <Card key={contentId} onClick={ ( contentId) => this.handleOnClick(contentId)} style={{ marginBottom: '2em'}}>
+            <Card key={contentId} onClick={ ( event, data) => this.handleOnClick(event, data)} style={{ marginBottom: '2em'}}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
@@ -38,9 +38,10 @@ class DisplayContent extends Component {
     }
   }
 
-  handleOnClick( managedContentId ) {
+  handleOnClick( event, data ) {
     // function to navigate to single article
-    console.log(`managedContentId is: ${JSON.stringify(managedContentId)}`);
+    console.log(`event is: ${JSON.stringify(event)}`);
+    console.log(`data is: ${JSON.stringify(data)}`);
   }
 
   render() {
