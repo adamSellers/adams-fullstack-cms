@@ -54,6 +54,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// force node to https connections
+app.use( (req, res, next ) => {
+  if (process.NODE_ENV === 'production') {
+    if ( req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(`https://${req.headers.host}${req.url}`);
+    } else {
+      return next();
+    }
+  } else {
+    return next();
+  }
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
