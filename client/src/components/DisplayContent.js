@@ -39,7 +39,7 @@ class DisplayContent extends Component {
 
   handleOnClick( managedContentId ) {
     // function to navigate to single article
-    console.log(`managedContentId is: ${managedContentId}`);
+    console.log(`managedContentId is: ${JSON.stringify(managedContentId)}`);
   }
 
   render() {
