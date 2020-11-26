@@ -27,7 +27,7 @@ export const fetchChannels = () => async dispatch => {
 
 /* This action will return the list of content (for ID news in fake backend -- TODO: Add
   content type inputs */
-export const fetchContentType = ( channelId ) => async dispatch => {
+export const fetchContent = ( channelId ) => async dispatch => {
   try {
     const res = await axios.get(`api/v1/getContent/${channelId}`);
     dispatch({ type: FETCH_CONTENT, payload: res.data });

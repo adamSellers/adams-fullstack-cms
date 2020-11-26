@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Dropdown } from 'semantic-ui-react';
-import { fetchChannels, fetchContentType, fetchUser } from '../actions';
+import { fetchChannels, fetchContent, fetchUser } from '../actions';
 
 class SelectChannel extends Component {
 
@@ -14,7 +14,7 @@ class SelectChannel extends Component {
   onDropdownChange(event, data) {
     console.log(`selected value is: ${data['value']}`);
     // fire the action that will get the content for a particular channel id
-    this.props.onFetchContentType(data['value']);
+    this.props.onFetchContent(data['value']);
   }
 
   render() {
@@ -38,7 +38,7 @@ const mapStateToProps = ({channels, auth}) => {
 const mapDispatchToProps = (dispatch) => {
   return { 
     onFetchChannels: () => dispatch(fetchChannels()),
-    onFetchContentType: (channelId) => dispatch(fetchContentType(channelId)),
+    onFetchContent: (channelId) => dispatch(fetchContent(channelId)),
     onFetchUser: () => dispatch(fetchUser()) 
   }
 };
