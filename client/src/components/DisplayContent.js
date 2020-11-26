@@ -17,9 +17,10 @@ class DisplayContent extends Component {
       );
     } else {
       const cards = this.props.content.data.map( article => {
+        let contentId = article.key;
         return (
           <Grid.Column stretched>
-            <Card key={article.key} onClick={ (key) => this.handleOnClick(key)} style={{ marginBottom: '2em'}}>
+            <Card key={contentId} onClick={ ( contentId) => this.handleOnClick(contentId)} style={{ marginBottom: '2em'}}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
