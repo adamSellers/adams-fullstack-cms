@@ -56,7 +56,7 @@ app.use(passport.session());
 
 // force node to https connections
 app.use( (req, res, next ) => {
-  if (process.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     if ( req.headers['x-forwarded-proto'] !== 'https') {
       console.log(`host param is: ${req.headers.host} and url param is: ${req.url}`);
       return res.redirect(`https://${req.headers.host}${req.url}`);
