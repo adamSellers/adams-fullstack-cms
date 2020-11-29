@@ -20,7 +20,7 @@ class DisplayContent extends Component {
         let contentId = article.key;
         return (
           <Grid.Column stretched>
-            <Card key={contentId} onClick={ ( event, data, contentId ) => this.handleOnClick(event, data, contentId)} style={{ marginBottom: '2em'}}>
+            <Card key={contentId} onClick={ ( event, data, contentId ) => this.handleOnClick(event, data, contentId)}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
