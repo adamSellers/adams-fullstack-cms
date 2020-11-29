@@ -18,6 +18,7 @@ class DisplayContent extends Component {
     } else {
       const cards = this.props.content.data.map( article => {
         let contentId = article.key;
+        console.log(`contentId for the card in the loop is: ${contentId}`);
         return (
           <Grid.Column stretched>
             <Card key={contentId} onClick={ ( event, data, contentId ) => this.handleOnClick(event, data, contentId)}>
