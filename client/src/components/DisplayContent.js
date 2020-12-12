@@ -39,7 +39,7 @@ class DisplayContent extends Component {
     }
   }
 
-  handleOnClick( contentId ) {
+  handleOnClick( children, ...contentId ) {
     // function to navigate to single article
     console.log(`contentId is: ${JSON.stringify(contentId)}`);
   }
