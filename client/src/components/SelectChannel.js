@@ -7,8 +7,10 @@ class SelectChannel extends Component {
 
   componentDidMount() {
     console.log(`in component did mount props.channels is: ${JSON.stringify(this.props.channels)}`);
-    this.props.onFetchChannels();
-    this.props.onFetchUser();
+    if (this.props.channels.data.length === 0) {
+      this.props.onFetchChannels();
+      this.props.onFetchUser();
+    }
   }
 
 
