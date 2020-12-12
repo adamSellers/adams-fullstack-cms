@@ -25,7 +25,7 @@ const channelsReducer = (state = initialState, action) => {
           activeChannels.push(singleItem);
         }
       });
-      return {...state, data: activeChannels, isLoading: false};
+      return {...state, activeChannels, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
     default:
