@@ -5,6 +5,7 @@ import { Segment, Container, Card } from 'semantic-ui-react';
 
 class SingleContent extends Component {
   constructor(props) {
+    super(props);
     const contentId = this.props.match.params.id;
   }
 
