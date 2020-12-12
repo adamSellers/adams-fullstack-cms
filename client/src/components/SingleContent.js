@@ -17,7 +17,7 @@ class SingleContent extends Component {
     return (
       <Segment>
         <Container>
-          Detail for managed Content ID ({this.singleItem[0].managedContentId}) goes here. 
+          Detail for managed Content ID {contentId} goes here. 
         </Container>
       </Segment>
     )
