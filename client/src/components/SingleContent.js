@@ -10,7 +10,7 @@ class SingleContent extends Component {
 
   // on mount, I want to filter out a single content item from state
   componentDidMount(){
-    const singleItem = this.props.content.data.filter( item => item.managedContentId === contentId);
+    const singleItem = this.props.content.data.filter( item => item.managedContentId === this.contentId);
     console.log(`in single item cmp - single item array is: ${JSON.stringify(singleItem)}`);
   };
 
@@ -19,7 +19,7 @@ class SingleContent extends Component {
     return (
       <Segment>
         <Container>
-          Detail for managed Content ID {contentId} goes here. 
+          Detail for managed Content ID {this.contentId} goes here. 
         </Container>
       </Segment>
     )
