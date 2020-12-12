@@ -27,7 +27,7 @@ class App extends Component {
           <Navbar />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/display-content" component={DisplayContent} />
-          <Route exact path="/content-item/:contentId" component={SingleContent} />
+          <Route path="/display-content/:contentId" component={SingleContent} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/instructions" component={About} />
           <Footer />
