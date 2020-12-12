@@ -17,11 +17,11 @@ class DisplayContent extends Component {
       );
     } else {
       const cards = this.props.content.data.map( article => {
-        let contentId = article.key;
-        console.log(`contentId for the card in the loop is: ${contentId}`);
+        let contentLink = `content-item/:${article.key}`;
+        console.log(`contentLink for the card in the loop is: ${contentLink}`);
         return (
           <Grid.Column stretched>
-            <Card key={article.key} href={article.key}>
+            <Card key={article.key} href={contentLink}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
