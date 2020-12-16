@@ -21,7 +21,7 @@ class DisplayContent extends Component {
         console.log(`contentLink for the card in the loop is: ${contentLink}`);
         return (
           <Grid.Column stretched>
-            <Card key={article.key} as={Link} to={contentLink}>
+            <Card key={article.key} as={Link} to={contentLink} onClick={ (article) => this.handleOnClick(article)}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
