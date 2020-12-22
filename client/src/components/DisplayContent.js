@@ -17,7 +17,7 @@ class DisplayContent extends Component {
       );
     } else {
       const cards = this.props.content.data.map( article => { 
-        let contentLink = `display-content/:${article.key}`;
+        let contentLink = `display-content/${article.key}`;
         console.log(`contentLink for the card in the loop is: ${contentLink}`);
         return (
           <Grid.Column stretched>

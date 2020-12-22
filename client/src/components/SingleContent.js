@@ -6,7 +6,7 @@ import { Segment, Container, Card } from 'semantic-ui-react';
 class SingleContent extends Component {
 
   state = {
-    contentId: this.props.match.params.id
+    contentId: this.props.match.params.contentId
   };
 
   // on mount, I want to filter out a single content item from state
