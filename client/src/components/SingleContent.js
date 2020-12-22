@@ -15,8 +15,8 @@ class SingleContent extends Component {
     const singleItemArray = this.props.content.data.filter( item => item.key === this.state.contentId);
     this.setState({
       singleItem: singleItemArray[0]
-    }).then( () => {
-      console.log(`the single item is: ${this.state.singleItem}`)
+    }, () => {
+      console.log(`single item now is: ${this.state.singleItem}`);
     });
   };
 
