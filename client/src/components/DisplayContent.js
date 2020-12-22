@@ -16,12 +16,12 @@ class DisplayContent extends Component {
         </Grid.Column>
       );
     } else {
-      const cards = this.props.content.data.map( article => {
+      const cards = this.props.content.data.map( article => { //as={Link} to={contentLink}
         let contentLink = `display-content/:${article.key}`;
         console.log(`contentLink for the card in the loop is: ${contentLink}`);
         return (
           <Grid.Column stretched>
-            <Card key={article.key} as={Link} to={contentLink} onClick={ (article) => this.handleOnClick(article)}>
+            <Card key={article.key} onClick={ (article) => this.handleOnClick(article)}>
               <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
               <Card.Content>
                 <Card.Header>
