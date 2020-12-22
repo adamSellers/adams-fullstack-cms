@@ -7,14 +7,17 @@ class SingleContent extends Component {
 
   state = {
     contentId: this.props.match.params.contentId,
-    singleItem: []
+    singleItem: {}
   };
 
   // on mount, I want to filter out a single content item from state
   componentDidMount(){
+    const singleItemArray = this.props.content.data.filter( item => item.key === this.state.contentId);
     this.setState({
-      singleItem: this.props.content.data.filter( item => item.key === this.state.contentId)
-    });
+      singleItem: singleItemArray[0]
+    }).then(
+      console.log(`the single item is: ${this.state.singleItem}`)
+    );
   };
 
   // then i want to render a single full column width card with the article details from state
@@ -25,9 +28,9 @@ class SingleContent extends Component {
           <Card 
             centered
             fluid
-            header={this.state.singleItem[0].title}
-            description={this.state.singleItem[0].body}
-            extra={`${this.state.singleItem[0].typeLable} Content Type - powered by Salesforce`}
+            header={this.state.singleItem.title}
+            description={this.state.singleItem.body}
+            extra={`${this.state.singleItem.typeLable} Content Type - powered by Salesforce`}
           />
         </Container>
       </Segment>
