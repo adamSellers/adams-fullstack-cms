@@ -15,9 +15,9 @@ class SingleContent extends Component {
     const singleItemArray = this.props.content.data.filter( item => item.key === this.state.contentId);
     this.setState({
       singleItem: singleItemArray[0]
-    }).then(
+    }).then( () => {
       console.log(`the single item is: ${this.state.singleItem}`)
-    );
+    });
   };
 
   // then i want to render a single full column width card with the article details from state
