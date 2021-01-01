@@ -39,11 +39,6 @@ class DisplayContent extends Component {
     }
   }
 
-  handleOnClick( children, ...article ) {
-    // function to navigate to single article
-    console.log(`contentId is: ${JSON.stringify(article)}`);
-  }
-
   render() {
     return(
       <Segment placeholder>
