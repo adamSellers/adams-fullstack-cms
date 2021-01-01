@@ -69,7 +69,7 @@ function contentRoutes(router) {
               }
             });
             console.log(`still sending old items but clean items are now: ${JSON.stringify(cleanItems)}`);
-            res.status(200).send(contentResponse.data);
+            res.status(200).send(cleanItems);
           }
         } catch (error) {
           console.log(error);
