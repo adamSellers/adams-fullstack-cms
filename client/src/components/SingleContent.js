@@ -30,7 +30,7 @@ class SingleContent extends Component {
             fluid
             header={this.state.singleItem.title}
             description={this.state.singleItem.body}
-            extra={`${this.state.singleItem.typeLable} Content Type - powered by Salesforce`}
+            extra={`${this.state.singleItem.typeLabel} Content Type - powered by Salesforce`}
           />
         </Container>
       </Segment>
