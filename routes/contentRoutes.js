@@ -45,9 +45,30 @@ function contentRoutes(router) {
             }
           });
           if (contentResponse.status === 200) {
-            console.log(`we have content for ${req.params.channelId}! Content returned: ${JSON.stringify(contentResponse.data.items)}`);
             // unescape html characters for sending to the front end
-            console.log(`the items are of type: ${typeof contentResponse.data.items}`);
+            const cleanItems = [];
+            contentResponse.data.items.forEach( el => {
+              if(el.type === 'news') {
+                // test for image source
+                const imageString;
+                if(el.contentNodes.bannerImage && el.contentNodes.bannerImage.url.startsWith('https')) {
+                  imageString = el.contentNodes.bannerImage.url;
+                } else {
+                  imageString = req.user.sfInstanceUrl + el.contentNodes.bannerImage.url
+                }
+                let singleItem = {
+                  key: el.managedContentId,
+                  title: (el.contentNodes.title) ? el.contentNodes.title.value : null,
+                  excerpt: (el.contentNodes.excerpt) ? he.decode(el.contentNodes.excerpt.value) : null,
+                  typeLabel: (el.typeLabel) ? el.typeLabel: null,
+                  image: (el.contentNodes.bannerImage) ? imageString : null,
+                  imageAlt: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.altText : null,
+                  body: (el.contentNodes.body) ? he.decode(el.contentNodes.body.value) : null
+                }
+                cleanItems.push(singleItem);
+              }
+            });
+            console.log(`still sending old items but clean items are now: ${JSON.stringify(cleanItems)}`);
             res.status(200).send(contentResponse.data);
           }
         } catch (error) {
