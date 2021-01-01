@@ -28,6 +28,7 @@ class SingleContent extends Component {
           <Card 
             centered
             fluid
+            image={this.state.singleItem.image}
             header={this.state.singleItem.title}
             description={this.state.singleItem.body}
             extra={`${this.state.singleItem.typeLabel} Content Type - powered by Salesforce`}
