@@ -22,7 +22,7 @@ class DisplayContent extends Component {
         return (
           <Grid.Column stretched>
             <Card key={article.key} as={Link} to={contentLink}>
-              <Image src={this.props.auth.data.sfInstanceUrl + article.image} />
+              <Image src={article.image} />
               <Card.Content>
                 <Card.Header>
                   {article.title}
@@ -58,8 +58,8 @@ class DisplayContent extends Component {
 }
 
 // these come from the combineReducers export
-const mapStateToProps = ({ content, auth }) => {
-  return { content, auth };
+const mapStateToProps = ({ content }) => {
+  return { content };
 };
 
 export default connect(mapStateToProps)(DisplayContent);
