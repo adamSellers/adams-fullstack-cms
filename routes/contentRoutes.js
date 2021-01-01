@@ -50,7 +50,7 @@ function contentRoutes(router) {
             contentResponse.data.items.forEach( el => {
               if(el.type === 'news') {
                 // test for image source
-                const imageString;
+                const imageString = '';
                 if(el.contentNodes.bannerImage && el.contentNodes.bannerImage.url.startsWith('https')) {
                   imageString = el.contentNodes.bannerImage.url;
                 } else {
