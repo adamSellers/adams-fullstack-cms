@@ -1,4 +1,5 @@
 const passport = require('passport');
+const he = require('he');
 const requireLogin = require('../middlewares/requireLogin');
 // const serverLag = require('../middlewares/serverLag');
 const axios = require('axios');
@@ -44,7 +45,9 @@ function contentRoutes(router) {
             }
           });
           if (contentResponse.status === 200) {
-            console.log(`we have content for ${req.params.channelId}! Content returned: ${JSON.stringify(contentResponse.data)}`);
+            console.log(`we have content for ${req.params.channelId}! Content returned: ${JSON.stringify(contentResponse.data.items)}`);
+            // unescape html characters for sending to the front end
+            console.log(`the items are of type: ${typeof contentResponse.data.items}`);
             res.status(200).send(contentResponse.data);
           }
         } catch (error) {
