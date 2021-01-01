@@ -11,24 +11,23 @@ const initialState = {
 const contentReducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_CONTENT:
-      // reduce the returned state down to an array of options
-      // filter here to limit to news articles only
-      const contentList = [];
-      action.payload['items'].forEach( el => {
-        if(el.type === 'news') {
-          let singleItem = {
-            key: el.managedContentId,
-            title: (el.contentNodes.title) ? el.contentNodes.title.value : null,
-            excerpt: (el.contentNodes.excerpt) ? el.contentNodes.excerpt.value : null,
-            typeLabel: (el.typeLabel) ? el.typeLabel: null,
-            image: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.url : null,
-            imageAlt: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.altText : null,
-            body: (el.contentNodes.body) ? el.contentNodes.body.value : null
-          }
-          contentList.push(singleItem);
-        }
-      });
-      return {...state, data: contentList, isLoading: false};
+      // moved filtering of content to server side api
+      // const contentList = [];
+      // action.payload['items'].forEach( el => {
+      //   if(el.type === 'news') {
+      //     let singleItem = {
+      //       key: el.managedContentId,
+      //       title: (el.contentNodes.title) ? el.contentNodes.title.value : null,
+      //       excerpt: (el.contentNodes.excerpt) ? el.contentNodes.excerpt.value : null,
+      //       typeLabel: (el.typeLabel) ? el.typeLabel: null,
+      //       image: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.url : null,
+      //       imageAlt: (el.contentNodes.bannerImage) ? el.contentNodes.bannerImage.altText : null,
+      //       body: (el.contentNodes.body) ? el.contentNodes.body.value : null
+      //     }
+      //     contentList.push(singleItem);
+      //   }
+      // });
+      return {...state, data: action.payload, isLoading: false};
     case "ERROR":
       return {...state, error: action.msg};
     default:
