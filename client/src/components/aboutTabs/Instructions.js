@@ -50,9 +50,7 @@ export default class Instructions extends Component {
             Once logged in, you will see a prompt on the home page asking for you to select an available channel. If there are no records in your dropdown list in the header, then 
             check your Salesforce CMS setup to ensure you have published at least one channel. It's typical that you might publish a community with the Salesforce Experience Cloud that
             will also create a channel of the same name - although this isn't strictly necessay. Selecting your channel from the dropdown will display the available content for that
-            channel. Again, if you don't see content, check that you have added content (of type news) to that specific channel and that your content items have been published. Today, 
-            there is no support for externally hosted image sources (like AWS S3 for example) although that may be added in the future. But, for now, be sure to add your images in any 
-            news articles as Salesforce Content as well. 
+            channel. Again, if you don't see content, check that you have added content (of type news) to that specific channel and that your content items have been published. 
           </p>
         </Segment>
         <Segment>
